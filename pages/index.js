@@ -13,6 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+
       <nav className={styles.nav}>
         <Link href="/">Florian Schneider</Link>
 
@@ -24,7 +25,7 @@ export default function Home() {
           <Link href="/about">About,</Link>
         </li>
         <li>
-          <Link href="/blog/hello-world">Contact</Link>
+          <Link href="/">Contact</Link>
         </li>
       </ul>
 

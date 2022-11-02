@@ -6,13 +6,17 @@
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
-  font-size: 1.6em;
+  font-size: 1.4em;
 }
 
 .menu {
   display: flex;
-  /* list-style: none; */
-  padding-right: 30px;
+  list-style: none;
+  margin-top: 0px;
+}
+
+.menu li {
+  padding-right: .3em;
 }
 
 .main {
@@ -69,7 +73,7 @@
   }
 } */
 
-
+/*
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -92,4 +96,4 @@
 .hover-underline-animation:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
-}
+} */

@@ -16,8 +16,6 @@ export default function Home() {
       <nav className={styles.nav}>
         <Link href="/">Florian Schneider</Link>
         <a>Work, About, Contact</a>
-
-
       </nav>
 
       <main className={styles.main}>
