@@ -17,7 +17,7 @@ export default function Home() {
         <Link href="/">Florian Schneider</Link>
 
       <ul className={styles.menu}>
-        <li className='hover-underline-animation'>
+        <li>
           <Link href="/work">Work,</Link>
         </li>
         <li>
