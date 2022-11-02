@@ -13,24 +13,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
       <nav className={styles.nav}>
         <Link href="/">Florian Schneider</Link>
-
-      <ul className={styles.menu}>
-        <li>
-          <Link href="/work">Work,</Link>
-        </li>
-        <li>
-          <Link href="/about">About,</Link>
-        </li>
-        <li>
-          <Link href="/">Contact</Link>
-        </li>
-      </ul>
-
-
-
+        <ul className={styles.menu}>
+          <li>
+            <Link href="/work">Work,</Link>
+          </li>
+          <li>
+            <Link href="/about">About,</Link>
+          </li>
+          <li>
+            <Link href="/">Contact</Link>
+          </li>
+        </ul>
       </nav>
 
       <main className={styles.main}>

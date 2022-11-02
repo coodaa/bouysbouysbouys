@@ -15,7 +15,17 @@ export default function Home() {
 
       <nav className={styles.nav}>
         <Link href="/">Florian Schneider</Link>
-        <a>Work, About, Contact</a>
+        <ul className={styles.menu}>
+          <li>
+            <Link href="/work">Work,</Link>
+          </li>
+          <li>
+            <Link href="/about">About,</Link>
+          </li>
+          <li>
+            <Link href="/">Contact</Link>
+          </li>
+        </ul>
       </nav>
 
       <main className={styles.main}>

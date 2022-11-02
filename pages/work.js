@@ -7,18 +7,26 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>bouysbouysbouys</title>
-        <meta name="description" content="bouys portfolio" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Head>
+      <title>bouysbouysbouys</title>
+      <meta name="description" content="bouys portfolio" />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
 
-      <nav className={styles.nav}>
-        <Link href="/">Florian Schneider</Link>
-        <a>Work, About, Contact</a>
-
-
-      </nav>
+    <nav className={styles.nav}>
+      <Link href="/">Florian Schneider</Link>
+      <ul className={styles.menu}>
+        <li>
+          <Link href="/work">Work,</Link>
+        </li>
+        <li>
+          <Link href="/about">About,</Link>
+        </li>
+        <li>
+          <Link href="/">Contact</Link>
+        </li>
+      </ul>
+    </nav>
 
       <main className={styles.main}>
         <h2>WORK</h2>
