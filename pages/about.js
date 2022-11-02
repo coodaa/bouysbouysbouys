@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
 
       <nav className={styles.nav}>
-        <Link href="/">Florian Schneider</Link>
+      <Link className={styles.link} href="/">Florian Schneider</Link>
         <ul className={styles.menu}>
           <li>
             <Link href="/work">Work,</Link>
@@ -29,7 +29,7 @@ export default function Home() {
       </nav>
 
       <main className={styles.main}>
-        <h1>ABOUT</h1>
+        <h2>ABOUT</h2>
       </main>
 
       <footer className={styles.footer}>

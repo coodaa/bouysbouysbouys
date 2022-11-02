@@ -14,16 +14,16 @@ export default function Home() {
     </Head>
 
     <nav className={styles.nav}>
-      <Link href="/">Florian Schneider</Link>
+      <Link className={styles.link} href="/">Florian Schneider</Link>
       <ul className={styles.menu}>
         <li>
-          <Link href="/work">Work,</Link>
+          <Link className={styles.link} href="/work">Work,</Link>
         </li>
         <li>
-          <Link href="/about">About,</Link>
+          <Link className={styles.link} href="/about">About,</Link>
         </li>
         <li>
-          <Link href="/">Contact</Link>
+          <Link className={styles.link} href="/">Contact</Link>
         </li>
       </ul>
     </nav>

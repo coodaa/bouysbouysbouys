@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
 
       <nav className={styles.nav}>
-        <Link href="/">Florian Schneider</Link>
+      <Link className={styles.link} href="/">Florian Schneider</Link>
         <ul className={styles.menu}>
           <li>
             <Link href="/work">Work,</Link>
