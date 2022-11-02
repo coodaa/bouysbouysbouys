@@ -15,27 +15,14 @@ export default function Home() {
 
       <nav className={styles.nav}>
         <Link href="/">Florian Schneider</Link>
-
-      <ul className={styles.menu}>
-        <li className='hover-underline-animation'>
-          <Link href="/work">Work,</Link>
-        </li>
-        <li>
-          <Link href="/about">About,</Link>
-        </li>
-        <li>
-          <Link href="/blog/hello-world">Contact</Link>
-        </li>
-      </ul>
-
+        <a>Work, About, Contact</a>
 
 
       </nav>
 
       <main className={styles.main}>
-        <h2>CREATIVE DEVELOPER</h2>
+        <h2>WORK</h2>
 
-        <h2>FLORIAN SCHNEIDER</h2>
       </main>
 
       <footer className={styles.footer}>
