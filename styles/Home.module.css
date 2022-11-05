@@ -122,3 +122,18 @@
     filter: invert(1);
   }
 } */
+.canvas {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+
+#copyExample {
+  color: white;
+  position: sticky;
+  font-size: 50px;
+}

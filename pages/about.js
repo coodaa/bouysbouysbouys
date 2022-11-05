@@ -1,8 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
 import Link from 'next/link';
-
+import typewriterImg from '../public/typewriter.jpg';
+import Navbar from '../components/Navbar';
 
 export default function Home() {
   return (
@@ -12,34 +13,22 @@ export default function Home() {
         <meta name="description" content="bouys portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <nav className={styles.nav}>
-        <ul className={styles.menu}>
-          <li>
-            <Link className={styles.link} href="/">Florian Schneider</Link>
-          </li>
-        </ul>
-        <ul className={styles.commalist}>
-          <li>
-            <Link href="/work" legacyBehavior>
-              <a className={styles.link}>Work</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" legacyBehavior>
-              <a className={styles.link}>About</a>
-            </Link>
-          </li>
-          <li>
-          <Link href="mailto:schneider.f@me.com" legacyBehavior>
-              <a className={styles.link}>Contact</a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
 
       <main className={styles.main}>
         <h2>ABOUT</h2>
+        <div>
+        <Image
+            src={typewriterImg}
+            alt='/'
+            width='700'
+            />
+          <p>I'm a creative developer with years of experience in building products
+            and appealing web experiences. I've collaborated with individuals and
+            teams to build experiences for SMEs and large enterprises including Wise,
+            Google, Interswitch and Intelia. Each project is an opportuinity to learn
+            new concepts across multiple domains including arts, maths and physics.</p>
+        </div>
       </main>
 
       <footer className={styles.footer}>
