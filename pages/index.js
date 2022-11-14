@@ -14,15 +14,11 @@ export default function Home() {
         <meta name="description" content="bouys portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-
       <main className={styles.main}>
         <h2>CREATIVE DEVELOPER</h2>
 
         <h2>FLORIAN SCHNEIDER</h2>
       </main>
-
-      <Footer />
     </div>
   )
 }
