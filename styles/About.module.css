@@ -2,81 +2,42 @@
   min-height: 100vh;
   padding: 2rem 0;
   flex: 1;
-  display: flex;
-  /* flex-direction: column; */
-  /* justify-content: center; */
   align-items: center;
   position:relative;
   text-align: center;
   color: white;
+  display: inline-block;
 }
 
 .imgAbout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30%;
+  display: block;
+  height: auto;
   width: 100%;
 }
 
 .textImgTop {
   position: absolute;
-  top: .0;
-  left: 4vh;
-  color: black;
-  font-size: 8vw;
-  width: 2em;
+  top: 2vh;
+  left: 2vh;
+  color: red;
   text-transform: uppercase;
+  font-size: calc(8vw - 3vmin);
+  width: 2em;
 }
 
 .textImgBottom {
   position: absolute;
-  bottom: 0vh;
-  right: 4vh;
-  color: black;
-  font-size: 8vw;
+  bottom: 2px;
+  right: 2vh;
+  color: red;
   text-transform: uppercase;
+  font-size: calc(8vw - 3vmin);
 }
 
 .about {
   display: flex;
   margin: auto;
   color:red;
-  /* columns: 2; */
   align-items: center;
   width: 30%;
-}
-
-
-
-@media screen and (min-width:1200px) {
-  .imgAbout {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30%;
-  width: 35%;
-  margin-left: 20em;
-  }
-
-  .textImgTop {
-    position: absolute;
-    top: .5em;
-    left: 5.5em;
-    color: grey;
-    font-size: 3vw;
-    width: 2em;
-    text-transform: uppercase;
-  }
-
-  .textImgBottom {
-    position: absolute;
-    bottom: 0vh;
-    right: 90vh;
-    color: grey;
-    font-size: 3vw;
-    text-transform: uppercase;
-  }
-
 }
