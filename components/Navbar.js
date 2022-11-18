@@ -1,11 +1,10 @@
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 
-
 const Navbar = () => {
   return (
     <nav className={styles.nav}>
-        <ul className={styles.menu}>
+        <ul className={styles.commalist}>
           <li>
             <Link className={styles.link} href="/">Florian Schneider</Link>
           </li>

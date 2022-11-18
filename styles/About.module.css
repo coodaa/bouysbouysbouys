@@ -1,4 +1,39 @@
+.mainAbout {
+  min-height: 100vh;
+  padding: 2rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+  text-align: center;
+  color: white;
+}
+
+.imgAbout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  width: 100%;
+}
+
+.textImg {
+  position: absolute;
+  top: .1em;
+  left: .1em;
+  color: red;
+  font-size: 5vh;
+  width: 2em;
+  text-transform: uppercase;
+}
+
 .about {
-  display: block;
+  display: flex;
+  margin: auto;
   color:red;
+  columns: 2;
+  align-items: center;
+  width: 30%;
 }

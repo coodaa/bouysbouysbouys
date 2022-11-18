@@ -5,19 +5,13 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 2rem;
   font-size: 1.4em;
 }
 
-.menu {
-  display: flex;
-  list-style: none;
-  margin-top: 0px;
-}
-
-.menu li {
-  padding-right: .3em;
-}
+/* .menu li {
+  padding-right: .5em;
+} */
 
 .link {
   display: inline-block;
@@ -52,10 +46,9 @@
   margin-bottom: 0px;
 }
 
-.commalist li {
-  padding-right: .4em;
+.commalist li:not(:last-child) {
+  padding-right: .4em ;
   display: inline;
-
 }
 
 .commalist li::after {
@@ -79,4 +72,17 @@
   align-items: center;
   flex-grow: 1;
   margin-bottom: 40px;
+}
+
+
+/* Ansicht für Tablets */
+
+@media screen and (min-width:620px) {
+
+}
+
+
+/* Ansicht für Desktop */
+
+@media screen and (min-width:720px) {
 }
