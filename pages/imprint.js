@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import styles from '../styles/Index.module.scss';
+import styles from '../styles/imprint.module.scss';
 
 export default function Home() {
   return (
