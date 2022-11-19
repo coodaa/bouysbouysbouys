@@ -1,7 +1,6 @@
 import Footer from "./Footer"
 import Navbar from "./Navbar"
-import styles from '../styles/Home.module.css';
-
+import styles from '../styles/Home.module.scss';
 
 const Layout = ({ children }) => {
   return (
