@@ -25,12 +25,14 @@ const Footer = () => {
         </ul>
         <ul className={styles.commalist}>
           <li className={styles.myself}>
-            <a>Design & Development</a>
-            <a>Florian Schneider</a>
+            <Link href="/imprint" legacyBehavior>
+            <a className={styles.link}>Legal Notice</a>
+          </Link>
+            <a>2022</a>
           </li>
         </ul>
       </div>
-      <ul className={styles.imprint}>
+      {/* <ul className={styles.imprint}>
         <li>
           <a>2022 Florian Schneider</a>
         </li>
@@ -39,7 +41,7 @@ const Footer = () => {
             <a className={styles.link}>Imprint</a>
           </Link>
         </li>
-      </ul>
+      </ul> */}
     </footer>
   );
 }
