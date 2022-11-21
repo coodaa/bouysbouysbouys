@@ -6,6 +6,27 @@ import portfolioimgImg from '../public/portfolioimg.jpg';
 
 
 export default function Home() {
+
+  function handleClick() {
+    var x = document.getElementById("more");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    }
+  else {
+    x.style.display = "none";
+    };
+  }
+
+  function handleClickTM() {
+    var x = document.getElementById("moreTM");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    }
+  else {
+    x.style.display = "none";
+    };
+  }
+
   return (
     <div>
       <Head>
@@ -38,10 +59,17 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.service}>
-          <h4>services</h4>
-
-
-
+          <h4 className={styles.service}>services</h4>
+          <div className={styles.showMore}>
+            <p>Frontend development</p>
+            <button className={styles.buttonMore} onClick={handleClick}>+</button>
+          </div>
+            <p id="more">I plan, design, build, test and maintain responsive front end web applications.</p>
+         <div className={styles.showMore}>
+          <p>Technical Management</p>
+            <button className={styles.buttonMore} onClick={handleClickTM}>+</button>
+          </div>
+          <p id="moreTM">I plan, manage and controll your art piece, exhibition, theatere performance.</p>
         </div>
       </main>
     </div>
