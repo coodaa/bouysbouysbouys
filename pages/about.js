@@ -25,8 +25,8 @@ export default function Home() {
         </div>
         <div className={styles.textAbout}>
           <p>A journey of curiosity and explorations</p>
-          <p>I'm a creative developer with years of experience in building products
-          and appealing web experiences. I've collaborated with individuals and
+          <p>I&quot;m a creative developer with years of experience in building products
+          and appealing web experiences. I&quot;ve collaborated with individuals and
           teams to build experiences for SMEs and large enterprises including Wise,
           Google, Interswitch and Intelia. Each project is an opportuinity to learn
           new concepts across multiple domains including arts, maths and physics.
