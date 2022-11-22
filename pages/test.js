@@ -1,9 +1,12 @@
 import Head from 'next/head';
-import styles from '../styles/Index.module.css';
+import Image from 'next/image';
+import styles from '../styles/test.module.css';
+import typewriterImg from '../public/typewriter.jpeg';
+import portfolioimgImg from '../public/portfolioimg.jpg';
 import { useEffect, useState } from 'react';
 
-
 export default function Home() {
+  // const [count, setCount] = useState(1)
 
   const [scrolled, setScrolled] = useState(0)
 
@@ -28,11 +31,14 @@ export default function Home() {
         <meta name="description" content="bouys portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <h2 className={styles.staircaseAnimation}>CREATIVE DEVELOPER</h2>
-        <header className={styles.AppHeader}>
-          <img src={`https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${scrolled.toString().padStart(4, '0')}.jpg` } />
-        </header>
+
+      <main>
+        <div className={styles.test}>
+          <header className={styles.AppHeader}>
+            <img src={`https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${scrolled.toString().padStart(4, '0')}.jpg` } />
+          </header>
+        </div>
+
       </main>
     </div>
   )

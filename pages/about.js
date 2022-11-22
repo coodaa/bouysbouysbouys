@@ -4,7 +4,6 @@ import styles from '../styles/About.module.scss';
 import typewriterImg from '../public/typewriter.jpeg';
 import portfolioimgImg from '../public/portfolioimg.jpg';
 
-
 export default function Home() {
 
   function handleClick() {
