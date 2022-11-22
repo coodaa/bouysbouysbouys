@@ -29,10 +29,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h2 className={styles.staircaseAnimation}>CREATIVE DEVELOPER</h2>
+        {/* <h2 className={styles.staircaseAnimation}>creative developer</h2> */}
         <header className={styles.AppHeader}>
           <img src={`https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${scrolled.toString().padStart(4, '0')}.jpg` } />
         </header>
+        <p className={styles.staircaseAnimation}>florian schneider</p>
+        <p className={styles.staircaseAnimation}>ist ein toller typ</p>
+        <p className={styles.staircaseAnimation}>book me</p>
       </main>
     </div>
   )

@@ -1,15 +1,32 @@
 .main {
   text-align: center;
   height: 400vh;
+
+  min-height: 100vh;
+  /* font-size: 1rem; */
+  /* margin: auto; */
+  /* width: 97%; */
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+
 }
 
 .AppHeader {
   top: 0;
   position: sticky;
-  padding: 5vw;
+  width: auto;
+  height: 100vh;
+  /* padding: 5vw; */
+  /* position: relative; */
+
 }
 
 .staircaseAnimation {
-  display: flex;
-  align: left ;
+  /* display: flex; */
+  font-size: 4rem;
+  text-transform: uppercase;
+  position: relative;
+  text-align: center;
+  margin-top: 30vh;
+  margin-bottom: 80vh;
 }
