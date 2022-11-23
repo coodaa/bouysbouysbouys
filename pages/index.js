@@ -31,11 +31,18 @@ export default function Home() {
       <main className={styles.main}>
         {/* <h2 className={styles.staircaseAnimation}>creative developer</h2> */}
         <header className={styles.AppHeader}>
-          <img src={`https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${scrolled.toString().padStart(4, '0')}.jpg` } />
+          <img className={styles.AppHeader} src={`https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${scrolled.toString().padStart(4, '0')}.jpg` } />
         </header>
-        <p className={styles.staircaseAnimation}>florian schneider</p>
-        <p className={styles.staircaseAnimation}>ist ein toller typ</p>
-        <p className={styles.staircaseAnimation}>book me</p>
+        <p className={styles.float}>florian schneider</p>
+        <p className={styles.float}>ist ein toller typ</p>
+        <p className={styles.float}>book me</p>
+
+        <div>
+          <p className={styles.shortAboutMe}>
+            PASSIONATE ABOUT WEB TECHNOLOGIES. I LOVE WORKING AT THE INTERSECTION OF CREATIVITY AND USER FRIENDLY INTERFACES. I CREATE MEMORABLE WEB EXPERIENCES.
+            WHEN I&quot;M NOT BUILDING OR EXPLORING NEW WEB EXPERIENCES, I&quot;M PROBABLY  FISHING AT A LAKE
+          </p>
+        </div>
       </main>
     </div>
   )
