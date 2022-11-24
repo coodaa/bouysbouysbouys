@@ -37,12 +37,12 @@ export default function Home() {
         <p className={styles.float}>ist ein toller typ</p>
         <p className={styles.float}>book me</p>
 
-        <div>
+        {/* <div>
           <p className={styles.shortAboutMe}>
             PASSIONATE ABOUT WEB TECHNOLOGIES. I LOVE WORKING AT THE INTERSECTION OF CREATIVITY AND USER FRIENDLY INTERFACES. I CREATE MEMORABLE WEB EXPERIENCES.
             WHEN I&quot;M NOT BUILDING OR EXPLORING NEW WEB EXPERIENCES, I&quot;M PROBABLY  FISHING AT A LAKE
           </p>
-        </div>
+        </div> */}
       </main>
     </div>
   )
