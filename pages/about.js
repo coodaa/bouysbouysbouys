@@ -3,9 +3,7 @@ import Image from 'next/image';
 import styles from '../styles/About.module.scss';
 import typewriterImg from '../public/typewriter.jpeg';
 import portfolioimgImg from '../public/portfolioimg.jpg';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-AOS.init();
+
 export default function Home() {
 
   function handleClick() {
