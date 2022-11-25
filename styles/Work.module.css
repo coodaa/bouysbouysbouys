@@ -7,3 +7,16 @@
   justify-content: center;
   align-items: center;
 }
+
+.myText {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: red;
+}
+
+.char {
+  transform: translateY(115px);
+  transition: transform .5s;
+  color: green;
+  background-color: pink;
+}
