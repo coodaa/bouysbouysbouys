@@ -1,22 +1,19 @@
 .work {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-content: center;
+  height: 100vh;
 }
 
 .myText {
   font-size: 4rem;
   text-transform: uppercase;
   color: red;
+  clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
+  line-height: 5.9rem;
 }
 
 .char {
   transform: translateY(115px);
   transition: transform .5s;
-  color: green;
-  background-color: pink;
+
 }
