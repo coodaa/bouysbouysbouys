@@ -1,9 +1,17 @@
-
 .main {
-  text-align: center;
   height: 400vh;
   min-height: 100vh;
   margin-bottom: 10vh;
+  /* display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  grid-auto-rows: 100px;
+  grid-template-areas:
+  "a a a a b b b b"
+  "a a a a b b b b"
+  "c c c c d d d d"
+  "c c c c d d d d";
+  align-items: start; */
 }
 
 .AppHeader {
@@ -11,6 +19,7 @@
   position: sticky;
   width: 100vw;
   margin-top: 5vh;
+  /* grid-area: c; */
 }
 
 .float {
@@ -23,8 +32,28 @@
   margin-right: auto;
 }
 
-.shortAboutMe {
+.big-text {
+  /* grid-area: a; */
+}
 
+/* .big-text-right {
+  grid-area: d;
+} */
+
+.my-text {
+  display: flex;
+  font-size: 6rem;
+  /* width: 2rem; */
+  text-transform: uppercase;
+  clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
+  line-height: 5.9rem;
+}
+
+.char {
+  transform: translateY(115px);
+  transition-property: transform;
+  transition-duration: 0.5;
+  display: inline-block;
 }
 
 
@@ -39,6 +68,4 @@
   .float {
     font-size: 4rem;
   }
-
-
 }
