@@ -4,16 +4,16 @@
   height: 100vh;
 }
 
-.myText {
+.my-text {
   font-size: 4rem;
   text-transform: uppercase;
-  color: red;
   clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
   line-height: 5.9rem;
 }
 
 .char {
   transform: translateY(115px);
-  transition: transform .5s;
-
+  transition-property: transform;
+  transition-duration: 0.5;
+  display: inline-block;
 }
