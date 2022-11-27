@@ -17,6 +17,7 @@
     "bulma": "^0.9.4",
     "gsap": "^3.11.3",
     "next": "13.0.0",
+    "next-images": "^1.8.4",
     "next-videos": "1.5.0",
     "node-sass": "^7.0.3",
     "react": "18.2.0",
@@ -29,7 +30,9 @@
   "devDependencies": {
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0",
-    "sass": "^1.56.1"
+    "html-loader": "^4.2.0",
+    "sass": "^1.56.1",
+    "url-loader": "^4.1.1"
   },
   "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
   "main": "next.config.js",

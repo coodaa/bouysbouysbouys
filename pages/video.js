@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import styles from "../styles/Appletest.module.scss";
+import styles from "../styles/Video.module.scss";
 import videoBG from '../assets/videoBG.mp4';
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
     <div className={styles.intro}>
       <h1>The New Dev Ed Pro</h1>
       <div>
-        <video src={videoBG} />
+        <video src="../../../assets/videos/video.mp4"></video>
       </div>
       <h1>Revolution</h1>
     </div>
