@@ -17,10 +17,12 @@
     "bulma": "^0.9.4",
     "gsap": "^3.11.3",
     "next": "13.0.0",
+    "next-videos": "1.5.0",
     "node-sass": "^7.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-split": "^2.0.14",
+    "scrollmagic": "^2.0.8",
     "split-type": "^0.3.3",
     "yarn": "^1.22.19"
   },

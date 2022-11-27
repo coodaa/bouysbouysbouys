@@ -3,12 +3,16 @@
 }
 
 .split {
-display: flex;
-justify-content: space-between;
+display: inline-block;
+/* justify-content:  ; */
 font-size: 3.6rem;
 text-transform: uppercase;
 clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
 line-height: 4rem;
-/* width: 310px; */
+/* width: 310px;
+height: auto; */
 /* white-space: pre-line; */
+/* white-space: pre-wrap; */
+/* white-space: pre; */
+
 }

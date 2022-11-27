@@ -35,10 +35,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles["split"]}>
-        <TextStyled ref={wavyTextRef}>
-          creative <br />
-          developer
-        </TextStyled>
+        <TextStyled ref={wavyTextRef}>creative &nbsp;developer</TextStyled>
       </div>
     </main>
   );

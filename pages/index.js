@@ -83,7 +83,9 @@ export default function Home() {
             <span className={styles.char}>i</span>
             <span className={styles.char}>a</span>
             <span className={styles.char}>n</span>
-            <span className={styles.char}>&nbsp;</span>
+            <span className={styles.char}>
+              &nbsp; <br></br>
+            </span>
             <span className={styles.char}>s</span>
             <span className={styles.char}>c</span>
             <span className={styles.char}>h</span>
@@ -95,12 +97,14 @@ export default function Home() {
             <span className={styles.char}>r</span>
           </h1>
         </div>
-        {/* <div>
+        <div>
           <p className={styles.shortAboutMe}>
-            PASSIONATE ABOUT WEB TECHNOLOGIES. I LOVE WORKING AT THE INTERSECTION OF CREATIVITY AND USER FRIENDLY INTERFACES. I CREATE MEMORABLE WEB EXPERIENCES.
-            WHEN I&quot;M NOT BUILDING OR EXPLORING NEW WEB EXPERIENCES, I&quot;M PROBABLY  FISHING AT A LAKE
+            PASSIONATE {"\n"}ABOUT WEB TECHNOLOGIES. I LOVE WORKING AT THE
+            INTERSECTION OF CREATIVITY AND USER FRIENDLY INTERFACES. I CREATE
+            MEMORABLE WEB EXPERIENCES. WHEN I&quot;M NOT BUILDING OR EXPLORING
+            NEW WEB EXPERIENCES, I&quot;M PROBABLY FISHING AT A LAKE
           </p>
-        </div> */}
+        </div>
       </main>
     </div>
   );

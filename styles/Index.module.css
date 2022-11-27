@@ -33,7 +33,9 @@
 }
 
 .big-text {
-  /* grid-area: a; */
+display: flex;
+justify-content: space-between;
+
 }
 
 /* .big-text-right {
