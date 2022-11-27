@@ -1,7 +1,7 @@
 .main {
   height: 400vh;
-  /* min-height: 100vh;
-  margin-bottom: 10vh; */
+  min-height: 100vh;
+  margin-bottom: 10vh;
   /* display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 10px;
@@ -13,23 +13,6 @@
   "c c c c d d d d";
   align-items: start; */
 }
-
-.char {
-  display: inline-block;
-  font-size: 3rem;
-  text-transform: uppercase;
-  }
-
-  .down-up-text {
-    clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
-    line-height: 2.5rem;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-  }
-
-
-
-
 
 .AppHeader {
   top: 0;
@@ -78,18 +61,6 @@ justify-content: space-between;
 
 
 @media only screen and (min-width: 992px) {
-
-  .char {
-    font-size: 7rem;
-    margin-top: -2vh;
-  }
-
-  .down-up-text {
-    clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
-    line-height: 5.5rem;
-    margin-top: 0vh;
-    margin-bottom: 2vh;
-  }
 
   .AppHeader {
     top: 0;
