@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from "react";
-import styles from "../styles/test.module.css";
+import styles from "../styles/test2.module.css";
 import styled from "@emotion/styled";
 import gsap from "gsap";
 import SplitTextToChars from "../components/SplitTextToChars.js";
 
 const TextStyled = styled.p`
-  font-size: calc(32px + (64 - 32) * ((100vw - 320px) / (1600 - 320)));
-  margin: 0;
-  color: white;
-  position: absolute;
+  transform: translateY(130px);
+  transition-property: transform;
+  transition-duration: 0.3;
+  display: inline-block;
 `;
 
 export default function Home() {
@@ -23,23 +23,23 @@ export default function Home() {
     gsap.from(
       chars,
       {
-        duration: 0.2,
-        opacity: 0,
-        scale: 1,
-        delay: 0.4,
-        y: -40,
-        rotationX: -90,
-        transformOrigin: "0% 50% -50",
-        ease: "inOut",
-        stagger: 0.025,
+        duration: 0.8,
+        delay: 0.1,
+        y: +100,
+        stagger: 0.05,
       },
       "+=0"
     );
   }, []);
 
   return (
-    <div className={styles["split"]}>
-      <TextStyled ref={wavyTextRef}>creative developer</TextStyled>
-    </div>
+    <main className={styles.main}>
+      <div className={styles["split"]}>
+        <TextStyled ref={wavyTextRef}>
+          creative <br />
+          developer
+        </TextStyled>
+      </div>
+    </main>
   );
 }

@@ -5,10 +5,14 @@
 }
 
 .my-text {
-  font-size: 4rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 6rem;
   text-transform: uppercase;
   clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
   line-height: 5.9rem;
+  font-kerning: none;
+
 }
 
 .char {

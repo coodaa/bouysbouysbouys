@@ -1,0 +1,14 @@
+.main {
+  height: 100vh;
+}
+
+.split {
+display: flex;
+justify-content: space-between;
+font-size: 3.6rem;
+text-transform: uppercase;
+clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
+line-height: 4rem;
+/* width: 310px; */
+/* white-space: pre-line; */
+}

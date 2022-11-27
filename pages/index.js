@@ -11,7 +11,7 @@ export default function Home() {
       {
         y: 0,
         stagger: 0.05,
-        delay: 0.5,
+        delay: 0.46,
         duration: 0.9,
       },
       [title]
