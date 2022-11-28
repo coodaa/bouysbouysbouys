@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Index.module.css";
-import gsap from "gsap";
+import { gsap } from "gsap/dist/gsap";
 import { useEffect, useState, useRef } from "react";
 import SplitTextToChars from "../components/SplitTextToChars.js";
 

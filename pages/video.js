@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styles from "../styles/Video.module.scss";
-import gsap from "gsap";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 
 export default function Home() {
@@ -24,9 +25,6 @@ export default function Home() {
 
   //   );
   // }, []);
-
-
-
 
 
   return (

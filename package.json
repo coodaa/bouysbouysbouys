@@ -26,12 +26,10 @@
     "split-type": "^0.3.3",
     "yarn": "^1.22.19"
   },
-
   "overrides": {
     "chokidar": "3.5.3",
     "glob-parent": "6.0.2"
   },
-
   "devDependencies": {
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0",
