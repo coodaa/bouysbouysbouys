@@ -3,7 +3,6 @@ import styles from "../styles/backupindex.module.css";
 import { gsap } from "gsap/dist/gsap";
 import { useEffect, useState } from "react";
 
-
 export default function Home() {
   useEffect(() => {
     const title = document.querySelector("#my-text");
