@@ -1,16 +1,41 @@
 import React, { useEffect, useRef } from "react";
 import styles from "../styles/Video.module.scss";
-// import videoBG from '../public/videoBG.mp4';
+import gsap from "gsap";
+
 
 export default function Home() {
+
+  // const intro = document.querySelector('.intro');
+  // const video = intro.querySelector('video');
+  // const text = intro.querySelector('h1');
+  // //End Section
+  // const section = document.querySelector('section');
+  // const end = section.querySelector('h1');
+
+
+  // //scroll magic
+  // const controller = new ScrollMagic.Controller();
+
+  // const scene =
+
+  // useEffect(() => {
+
+  //   gsap.from(
+
+  //   );
+  // }, []);
+
+
+
+
 
   return (
     <div className={styles.intro}>
       <h1>The New Dev Ed Pro</h1>
       <div>
-        {/* <video src="../../../public/videoBG.mp4"></video> */}
+      <video controls src={"/videoBG.mp4"} style={{ width: "100%", height: '100%' }} />
       </div>
-      <h1>Revolution</h1>
+      <h1 className={styles.section}>Revolution</h1>
     </div>
   );
 }
