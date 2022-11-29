@@ -3,10 +3,6 @@ import styles from "../styles/vid.module.scss";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
-// const { useEffect, useRef, useState } = React;
-
 export default function Home() {
 
   const IntroVideoRef = useRef(null);
@@ -23,7 +19,7 @@ export default function Home() {
       pin: IntroVideoRef.current,
       start: 'center center',
       end: '+=20000',
-      markers: true,
+      // markers: true,
       onUpdate: function(self) {
         if(videoRef.current) {
           const scrollPos = self.progress;
@@ -34,7 +30,7 @@ export default function Home() {
             videoRef.current.currentTime = videoCurrentTime;
           }
 
-          console.log(videoDuration, scrollPos, videoCurrentTime)
+          // console.log(videoDuration, scrollPos, videoCurrentTime)
         }
       },
     })
@@ -42,11 +38,11 @@ export default function Home() {
   return (
     <>
       <div ref={IntroVideoRef} className={styles.intro}>
-        <video className={styles.video} id="video" ref={videoRef} src={"/videoBG.mp4"}></video>
+        <video className={styles.video} autoPlay={true} id="video" ref={videoRef} src={"/videoBG.mp4"}></video>
       </div>
-      {/* <section className={styles.section} >
+      <section className={styles.section} >
         <h1 className={styles.section} >SECTION</h1>
-      </section> */}
+      </section>
 
     </>
   )
