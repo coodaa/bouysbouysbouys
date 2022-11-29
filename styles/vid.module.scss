@@ -2,11 +2,10 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
-  // height: 100vh;
 }
 
 .intro {
-  height: 100vh
+  height: 200vh
 }
 
 .intro video {
@@ -14,6 +13,7 @@
   width : 100%;
   object-fit: cover;
   position: fixed;
+  // border: 5px solid red;
 }
 
 .section {
@@ -22,8 +22,8 @@
   background-color: white;
 }
 
-.section h1 {
-    margin: auto ;
-    text-align: center;
-    font-size: 7rem;
-}
+// .section h1 {
+//     margin: auto ;
+//     text-align: center;
+//     font-size: 7rem;
+// }

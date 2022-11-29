@@ -37,13 +37,14 @@ export default function Home() {
   }, [IntroVideoRef, videoRef]);
   return (
     <>
+    <div className={styles.main}>
       <div ref={IntroVideoRef} className={styles.intro}>
         <video className={styles.video} autoPlay={true} id="video" ref={videoRef} src={"/videoBG.mp4"}></video>
       </div>
       <section className={styles.section} >
-        <h1 className={styles.section} >SECTION</h1>
+        <h1 >SECTION</h1>
       </section>
-
+    </div>
     </>
   )
 }
