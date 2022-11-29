@@ -51,7 +51,7 @@
   width : 100%;
   object-fit: cover;
   position: fixed;
-  border: 5px solid red;
+  /* border: 5px solid red; */
 }
 
 .section {

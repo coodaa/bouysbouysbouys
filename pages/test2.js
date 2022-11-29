@@ -32,7 +32,7 @@ export default function Home() {
       chars,
       {
         duration: 0.4,
-        delay: 0.00,
+        delay: 0.0,
         y: +90,
         stagger: 0.03,
       },

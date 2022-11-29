@@ -4,7 +4,6 @@ import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Home() {
-
   const IntroVideoRef = useRef(null);
   const videoRef = useRef(null);
 
@@ -17,34 +16,40 @@ export default function Home() {
       trigger: IntroVideoRef.current,
       scrub: true,
       pin: IntroVideoRef.current,
-      start: 'center center',
-      end: '+=20000',
+      start: "center center",
+      end: "+=20000",
       // markers: true,
-      onUpdate: function(self) {
-        if(videoRef.current) {
+      onUpdate: function (self) {
+        if (videoRef.current) {
           const scrollPos = self.progress;
           const videoDuration = videoRef.current.duration;
           const videoCurrentTime = videoDuration * scrollPos;
 
-          if(videoCurrentTime) {
+          if (videoCurrentTime) {
             videoRef.current.currentTime = videoCurrentTime;
           }
 
           // console.log(videoDuration, scrollPos, videoCurrentTime)
         }
       },
-    })
+    });
   }, [IntroVideoRef, videoRef]);
   return (
     <>
-    <div className={styles.main}>
-      <div ref={IntroVideoRef} className={styles.intro}>
-        <video className={styles.video} autoPlay={true} id="video" ref={videoRef} src={"/videoBG.mp4"}></video>
+      <div className={styles.main}>
+        <div ref={IntroVideoRef} className={styles.intro}>
+          <video
+            className={styles.video}
+            autoPlay={true}
+            id="video"
+            ref={videoRef}
+            src={"/videoBG.mp4"}
+          ></video>
+        </div>
+        <section className={styles.section}>
+          <h1>SECTION</h1>
+        </section>
       </div>
-      <section className={styles.section} >
-        <h1 >SECTION</h1>
-      </section>
-    </div>
     </>
-  )
+  );
 }
