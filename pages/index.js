@@ -1,12 +1,14 @@
 import Head from "next/head";
 import styles from "../styles/Index.module.css";
-import { gsap } from "gsap/dist/gsap";
 import { useEffect, useState, useRef } from "react";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SplitTextToChars from "../components/SplitTextToChars.js";
 
 
 export default function Home() {
 
+  //split chars
   const upTextRef = useRef(null);
   useEffect(() => {
     if (!upTextRef.current) return;
@@ -75,19 +77,39 @@ export default function Home() {
     );
   }, []);
 
-  const [scrolled, setScrolled] = useState(0);
+  //end split chars
+
+  //video on scroll
+  const IntroVideoRef = useRef(null);
+  const videoRef = useRef(null);
+
   useEffect(() => {
-    window.addEventListener("scroll", scrollProgress);
-    return () => window.removeEventListener("scroll", scrollProgress);
-  }, []);
-  const scrollProgress = () => {
-    const scrollpx = document.documentElement.scrollTop;
-    const winHeightPx =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-    const scrollLen = Math.ceil(((scrollpx / winHeightPx) * 100) / 0.69);
-    setScrolled(scrollLen);
-  };
+    gsap.registerPlugin(ScrollTrigger);
+
+    videoRef.current.currentTime = 0;
+
+    ScrollTrigger.create({
+      trigger: IntroVideoRef.current,
+      scrub: true,
+      pin: IntroVideoRef.current,
+      start: 'center center',
+      end: '+=20000',
+      // markers: true,
+      onUpdate: function(self) {
+        if(videoRef.current) {
+          const scrollPos = self.progress;
+          const videoDuration = videoRef.current.duration;
+          const videoCurrentTime = videoDuration * scrollPos;
+
+          if(videoCurrentTime) {
+            videoRef.current.currentTime = videoCurrentTime;
+          }
+
+          // console.log(videoDuration, scrollPos, videoCurrentTime)
+        }
+      },
+    })
+  }, [IntroVideoRef, videoRef]);
 
   return (
     <div>
@@ -108,12 +130,21 @@ export default function Home() {
         </p>
       </div>
 
-      <header className={styles.AppHeader}>
-        <img className={styles.img} src={`https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${scrolled.toString().padStart(4, '0')}.jpg` } />
+
+      <div ref={IntroVideoRef} className={styles.intro}>
+        <video className={styles.video} autoPlay={true} id="video" ref={videoRef} src={"/videoBG.mp4"}></video>
+      </div>
+      {/* <section className={styles.section} >
+        <h1 >SECTION</h1>
+      </section> */}
+
+
+
+
+
         {/* <p className={styles.float}>florian schneider</p>
         <p className={styles.float}>ist ein toller typ</p>
         <p className={styles.float}>book me</p> */}
-      </header>
 
       <div className={styles.layout}>
         <div className={styles.char}>
