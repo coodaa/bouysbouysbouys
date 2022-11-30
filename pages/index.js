@@ -92,7 +92,7 @@ export default function Home() {
       pin: IntroVideoRef.current,
       start: "center center",
       end: "+=20000",
-      // markers: true,
+      markers: true,
       onUpdate: function (self) {
         if (videoRef.current) {
           const scrollPos = self.progress;
@@ -130,7 +130,7 @@ export default function Home() {
         <div ref={IntroVideoRef} className={styles.intro}>
           <video
             className={styles.video}
-            autoPlay={true}
+            // autoPlay={true}
             id="video"
             ref={videoRef}
             src={"/videoBG.mp4"}
