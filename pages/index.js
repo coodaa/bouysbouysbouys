@@ -130,7 +130,7 @@ export default function Home() {
         <div ref={IntroVideoRef} className={styles.intro}>
           <video
             className={styles.video}
-            // autoPlay={true}
+            autoPlay={true}
             id="video"
             ref={videoRef}
             src={"/videoBG.mp4"}
