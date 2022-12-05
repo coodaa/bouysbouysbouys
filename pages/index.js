@@ -92,7 +92,7 @@ export default function Home() {
       pin: IntroVideoRef.current,
       start: "center center",
       end: "+=20000",
-      markers: true,
+      // markers: true,
       onUpdate: function (self) {
         if (videoRef.current) {
           const scrollPos = self.progress;
