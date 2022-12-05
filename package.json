@@ -21,6 +21,7 @@
     "node-sass": "^7.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-interactive-blob": "^0.0.1",
     "react-split": "^2.0.14",
     "scrollmagic": "^2.0.8",
     "split-type": "^0.3.3",

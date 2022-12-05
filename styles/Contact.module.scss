@@ -1,9 +1,151 @@
 .main {
   min-height: 100vh;
-  text-align: justify;
-  font-size: 1rem;
-  margin: auto;
-  width: 97%;
   margin-top: 10vh;
   margin-bottom: 10vh;
+  display: flex;
+  justify-content: center;
+}
+
+.blob {
+  position: absolute;
+  }
+
+.text {
+  display: block;
+  position: relative;
+  mix-blend-mode: difference;
+  color: white;
+  font-size: 5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+  padding: 0 .1rem;
+  margin: auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2vh;
+  font-size: 1.5em;
+}
+
+.myself {
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  display: inline-block;
+  position: relative;
+  color: white;
+}
+
+.link:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.35s ease-in-out;
+}
+
+.link:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.commalist {
+  list-style: none;
+  flex-direction: column;
+  padding: .1rem;
+  display: flex;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.footer {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  font-size: 1.5em;
+  }
+
+.imprint {
+  list-style: none;
+  padding: 0.5rem;
+  display: flex;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+@media only screen and (min-width: 992px) {
+
+  .nav,
+  .footer {
+    margin-top: 5vh;
+    font-size: 1.6em;
+  }
+
+  .container {
+    padding: 0 4rem;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .imprint {
+    padding: 0px;
+    display: flex;
+    list-style: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    justify-content: space-between;
+    font-size: .8rem;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+  }
+
+  .commalist {
+    padding: 0px;
+    display: flex;
+    list-style: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .commalist:last-child {
+    text-align: end;
+  }
+
+  .commalist li:not(:last-child) {
+    padding-right: .4em ;
+    display: inline;
+  }
+
+  .commalist li::after {
+    content: ", ";
+  }
+
+  .commalist li:last-child::after {
+    content: "";
+  }
 }
