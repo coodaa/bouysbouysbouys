@@ -1,68 +1,23 @@
-// import styles from "../styles/Contact.module.scss";
-// import { Blob } from "react-interactive-blob";
-// import Link from "next/link";
-
-// export default function Contact() {
-//   return (
-//     <div className={styles.main}>
-//       <div className={styles.blob}>
-//         <Blob
-//           // height={500}
-//           // radius={150}
-//           color="white"
-//           // sensitivity={0.5}
-//           // friction={0.0095}
-//           // elasticity={0.001}
-//           // acceleration={-1 + Math.random() * 0.1}
-//         />
-//       </div>
-//       <div className={styles.text}>
-//         <h3>SEND ME A MESSAGE</h3>
-//         <h4>hello@bouysbouysbouys.com</h4>
-//       </div>
-//       <div>
-//         {/* <h3>or connect with me on socials</h3>
-//         <ul className={styles.commalist}>
-//           <li>
-//             <Link
-//               href="https://www.linkedin.com/in/florianschneiderberlin/"
-//               legacyBehavior
-//             >
-//               <a target="_blank" className={styles.link}>
-//                 LinkedIn
-//               </a>
-//             </Link>
-//           </li>
-//           <li>
-//             <Link href="https://github.com/coodaa" legacyBehavior>
-//               <a target="_blank" className={styles.link}>
-//                 Github
-//               </a>
-//             </Link>
-//           </li>
-//         </ul> */}
-//       </div>
-//     </div>
-//   );
-// }
-
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import styles from "../styles/Contact2.module.scss";
 import blobs from "blobs";
+import Link from "next/link";
+import SplitTextToChars from "../components/SplitTextToChars.js";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap/dist/gsap";
 
 const options = {
   complexity: 0.6,
   contrast: 0.2,
-  // guides: true,
-  size: 800,
+  size: 900,
   color: "black",
   stroke: 600,
 };
 
 const Background = ({ svg }) => (
-  <div className={styles.main}>
-    <svg viewBox="0 0 800 800" className={styles.wheel}>
+  <div>
+    <svg viewBox="0 100 900 900" className={styles.wheel}>
       <defs>
         <radialGradient id="radial-gradient" cx="80%" fx="100%" fr="0%" r="80%">
           <stop offset="0.0677083" stopColor="black" />
@@ -97,11 +52,58 @@ export default function Contact() {
     },
   });
 
+  const upTextRef = useRef(null);
+  useEffect(() => {
+    if (!upTextRef.current) return;
+    const chars = SplitTextToChars(upTextRef.current);
+    gsap.set(upTextRef.current, { perspective: 200 });
+    gsap.from(
+      chars,
+      {
+        duration: 0.4,
+        delay: 0,
+        y: +80,
+        stagger: 0.03,
+      },
+      "+=0"
+    );
+  }, []);
+
+  const upTextRef2 = useRef(null);
+  useEffect(() => {
+    if (!upTextRef2.current) return;
+    const chars = SplitTextToChars(upTextRef2.current);
+    gsap.set(upTextRef2.current, { perspective: 200 });
+    gsap.from(
+      chars,
+      {
+        duration: 0.3,
+        delay: 0,
+        y: +80,
+        stagger: 0.03,
+      },
+      "+=0"
+    );
+  }, []);
+
   return (
-    <div onClick={() => change(blobs.editable(options))}>
+    <div
+      className={styles.main}
+      onClick={() => change(blobs.editable(options))}
+    >
       <Background svg={props3.svg} fill={props3.fill} />
-      <h1 className={styles.text}>SEND ME A MESSAGE</h1>
-      <h3 className={styles.text}>hello@bouysbouysbouys.com</h3>
+      <h1 className={styles.text} ref={upTextRef}>
+        send me a message
+      </h1>
+      <Link
+        className={styles.text}
+        href="mailto:schneider.f@me.com"
+        legacyBehavior
+      >
+        <h3 className={styles.text} ref={upTextRef2}>
+          hello@bouysbouysbouys.com
+        </h3>
+      </Link>
     </div>
   );
 }
