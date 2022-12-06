@@ -1,0 +1,27 @@
+.main {
+  min-height: 45vh;
+  display: flex;
+  justify-content: center;
+}
+
+.wheel {
+  margin: auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  // width: 800px;
+}
+
+.blobgradient {
+  fill: url(#radial-gradient) rgb(255, 255, 255);
+}
+
+
+.text {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  mix-blend-mode: difference;
+  color: white;
+  top: -32vh;
+}

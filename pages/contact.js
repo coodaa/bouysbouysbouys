@@ -7,11 +7,11 @@ export default function Contact() {
     <div className={styles.main}>
       <div className={styles.blob}>
         <Blob
-          height={500}
-          radius={150}
+          // height={500}
+          // radius={150}
           color="white"
-          sensitivity={0.5}
-          friction={0.0095}
+          // sensitivity={0.5}
+          // friction={0.0095}
           // elasticity={0.001}
           // acceleration={-1 + Math.random() * 0.1}
         />
