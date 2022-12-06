@@ -1,6 +1,5 @@
 .main {
   min-height: 60vh;
-  // margin-top: 10vh;
 }
 
 .wheel {
@@ -28,12 +27,11 @@
 @media only screen and (min-width: 992px) {
   .main {
     min-height: 123vh;
-    margin-top: 0vh;
+    margin-top: 10vh;
   }
 
   .text {
-    clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
-    line-height: 6.1rem;
+    line-height: 5.9rem;
     top: 40vh;
     font-size: 5rem;
   }
