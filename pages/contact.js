@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
-import styles from "../styles/Contact2.module.scss";
+import styles from "../styles/Contact.module.scss";
 import blobs from "blobs";
 import Link from "next/link";
 import SplitTextToChars from "../components/SplitTextToChars.js";
