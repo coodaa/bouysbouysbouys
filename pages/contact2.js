@@ -6,7 +6,7 @@ import blobs from "blobs";
 const options = {
   complexity: 0.6,
   contrast: 0.2,
-  guides: true,
+  // guides: true,
   size: 800,
   color: "black",
   stroke: 600,
@@ -32,7 +32,7 @@ const Background = ({ svg }) => (
   </div>
 );
 
-export default function Contact2() {
+export default function Contact() {
   const [blob, change] = useState(blobs.editable(options));
 
   const props3 = useSpring({
