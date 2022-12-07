@@ -1,5 +1,5 @@
 .main {
-  min-height: 60vh;
+  min-height: 55vh;
 }
 
 .wheel {
@@ -24,9 +24,16 @@
   text-transform: uppercase;
 }
 
+
+@media (min-width: 30em) and (orientation: landscape) {
+  .main {
+    min-height: 180vh;
+  }
+}
+
 @media only screen and (min-width: 992px) {
   .main {
-    min-height: 123vh;
+    min-height: 110vh;
     margin-top: 10vh;
   }
 
@@ -34,5 +41,11 @@
     line-height: 5.9rem;
     top: 40vh;
     font-size: 5rem;
+  }
+
+  .wheel {
+    max-width: 70vw;
+    max-height: auto;
+    margin-left: 10%
   }
 }

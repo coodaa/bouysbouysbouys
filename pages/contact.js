@@ -95,11 +95,7 @@ export default function Contact() {
       <h1 className={styles.text} ref={upTextRef}>
         send me a message
       </h1>
-      <Link
-        className={styles.text}
-        href="mailto:schneider.f@me.com"
-        legacyBehavior
-      >
+      <Link href="mailto:schneider.f@me.com" legacyBehavior>
         <h3 className={styles.text} ref={upTextRef2}>
           hello@bouysbouysbouys.com
         </h3>
