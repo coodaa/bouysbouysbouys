@@ -136,15 +136,15 @@ export default function Home() {
             src={"/videoBG.mp4"}
           ></video>
         </div>
-        {/* <section className={styles.section} >
-        <h1 >SECTION</h1>
-      </section> */}
+        {/* <section className={styles.section}>
+          <h1>SECTION</h1>
+        </section> */}
+        {/*
+        <p className={styles.float}>florian schneider</p>
+        <p className={styles.float}>ist ein toller typ</p>
+        <p className={styles.float}>book me</p> */}
 
-        {/* <p className={styles.float}>florian schneider</p>
-      <p className={styles.float}>ist ein toller typ</p>
-      <p className={styles.float}>book me</p> */}
-
-        <div className={styles.layout}>
+        {/* <div className={styles.layout}>
           <div className={styles.char}>
             <p className={styles["down-up-text"]} ref={upTextRef3}>
               florian
@@ -153,7 +153,7 @@ export default function Home() {
               schneider
             </p>
           </div>
-        </div>
+        </div> */}
         {/* <div>
           <p className={styles.shortAboutMe}>
             PASSIONATE {"\n"}ABOUT WEB TECHNOLOGIES. I LOVE WORKING AT THE
