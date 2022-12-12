@@ -15,10 +15,10 @@ export default function Home() {
     gsap.from(
       chars,
       {
-        duration: 0.4,
+        duration: 0.8,
         delay: 0.0,
         y: +90,
-        stagger: 0.03,
+        stagger: 0.09,
       },
       "+=0"
     );
@@ -32,10 +32,10 @@ export default function Home() {
     gsap.from(
       chars,
       {
-        duration: 0.4,
-        delay: 0.0,
+        duration: 0.8,
+        delay: -1.355,
         y: +90,
-        stagger: 0.03,
+        stagger: 0.09,
       },
       "+=0"
     );

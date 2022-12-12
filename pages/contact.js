@@ -78,7 +78,7 @@ export default function Contact() {
       chars,
       {
         duration: 0.3,
-        delay: 0,
+        delay: -1,
         y: +80,
         stagger: 0.03,
       },
@@ -97,7 +97,7 @@ export default function Contact() {
       </h1>
       <Link href="mailto:schneider.f@me.com" legacyBehavior>
         <h3 className={styles.text} ref={upTextRef2}>
-          hello@bouysbouysbouys.com
+          hey@bouysbouysbouys.com
         </h3>
       </Link>
     </div>
