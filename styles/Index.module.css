@@ -46,6 +46,12 @@
   /* position: absolute; */
 }
 
+.video,
+#video {
+  width: 20vw;
+  height: auto;
+}
+
 .intro video {
   height : 100%;
   width : 100%;
@@ -60,11 +66,11 @@
   background-color: white;
 }
 
-/* // .section h1 {
-//     margin: auto ;
-//     text-align: center;
-//     font-size: 7rem;
-// } */
+/* .section h1 {
+  margin: auto ;
+  text-align: center;
+  font-size: 7rem;
+ } */
 
 @media only screen and (min-width: 992px) {
 

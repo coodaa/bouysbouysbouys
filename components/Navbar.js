@@ -26,9 +26,6 @@ export default function Navbar() {
           <Link href="/contact" legacyBehavior>
             <a className={styles.link}>Contact</a>
           </Link>
-          {/* <Link href="mailto:schneider.f@me.com" legacyBehavior>
-              <a className={styles.link}>Contact</a>
-            </Link> */}
         </li>
       </ul>
     </nav>
