@@ -42,7 +42,8 @@
 }
 
 .intro {
-  height: 200vh;
+  /* height: 200vh; */
+  width: 20vw;
   /* position: absolute; */
 }
 

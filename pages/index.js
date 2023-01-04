@@ -91,8 +91,8 @@ export default function Home() {
       scrub: true,
       pin: IntroVideoRef.current,
       start: "center center",
-      end: "+=10000",
-      markers: true,
+      end: "+=20000",
+      // markers: true,
       onUpdate: function (self) {
         if (videoRef.current) {
           const scrollPos = self.progress;
@@ -138,9 +138,9 @@ export default function Home() {
           <h1>SECTION</h1>
         </section> */}
 
-        <p className={styles.float}>florian schneider</p>
+        {/* <p className={styles.float}>florian schneider</p>
         <p className={styles.float}>ist ein toller typ</p>
-        <p className={styles.float}>book me</p>
+        <p className={styles.float}>book me</p> */}
 
         {/* <div className={styles.layout}>
           <div className={styles.char}>
@@ -153,14 +153,14 @@ export default function Home() {
           </div>
         </div> */}
 
-        <div>
+        {/* <div>
           <p className={styles.shortAboutMe}>
             PASSIONATE {"\n"}ABOUT WEB TECHNOLOGIES. I LOVE WORKING AT THE
             INTERSECTION OF CREATIVITY AND USER FRIENDLY INTERFACES. I CREATE
             MEMORABLE WEB EXPERIENCES. WHEN I&quot;M NOT BUILDING OR EXPLORING
             NEW WEB EXPERIENCES, I&quot;M PROBABLY FISHING AT A LAKE
           </p>
-        </div>
+        </div> */}
       </main>
     </div>
   );
