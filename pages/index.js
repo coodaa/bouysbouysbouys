@@ -91,8 +91,10 @@ export default function Home() {
       scrub: true,
       pin: IntroVideoRef.current,
       start: "center center",
-      end: "+=20000",
-      // markers: true,
+      // end: "+=20000",
+      end: "9000",
+
+      markers: true,
       onUpdate: function (self) {
         if (videoRef.current) {
           const scrollPos = self.progress;
@@ -126,6 +128,9 @@ export default function Home() {
         </div>
 
         <div ref={IntroVideoRef} className={styles.intro}>
+          <h1 className={styles.float}>florian schneider</h1>
+          {/* <h1 className={styles.float}>ist ein toller typ</h1> */}
+          {/* <h1 className={styles.float}>book me</h1> */}
           <video
             className={styles.video}
             autoPlay={true}
@@ -134,13 +139,9 @@ export default function Home() {
             src={"/videoBG.mp4"}
           ></video>
         </div>
-        {/* <section className={styles.section}>
+        <section className={styles.section}>
           <h1>SECTION</h1>
-        </section> */}
-
-        {/* <p className={styles.float}>florian schneider</p>
-        <p className={styles.float}>ist ein toller typ</p>
-        <p className={styles.float}>book me</p> */}
+        </section>
 
         {/* <div className={styles.layout}>
           <div className={styles.char}>
