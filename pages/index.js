@@ -90,11 +90,12 @@ export default function Home() {
       trigger: IntroVideoRef.current,
       scrub: true,
       pin: IntroVideoRef.current,
+      delay: 5.0,
       start: "center center",
       // end: "+=20000",
       end: "9000",
 
-      markers: true,
+      // markers: true,
       onUpdate: function (self) {
         if (videoRef.current) {
           const scrollPos = self.progress;
@@ -139,10 +140,6 @@ export default function Home() {
             src={"/videoBG.mp4"}
           ></video>
         </div>
-        <section className={styles.section}>
-          <h1>SECTION</h1>
-        </section>
-
         {/* <div className={styles.layout}>
           <div className={styles.char}>
             <p className={styles["down-up-text"]} ref={upTextRef3}>
@@ -153,15 +150,14 @@ export default function Home() {
             </p>
           </div>
         </div> */}
-
-        {/* <div>
-          <p className={styles.shortAboutMe}>
+        <section className={styles.section}>
+          <p>
             PASSIONATE {"\n"}ABOUT WEB TECHNOLOGIES. I LOVE WORKING AT THE
             INTERSECTION OF CREATIVITY AND USER FRIENDLY INTERFACES. I CREATE
             MEMORABLE WEB EXPERIENCES. WHEN I&quot;M NOT BUILDING OR EXPLORING
             NEW WEB EXPERIENCES, I&quot;M PROBABLY FISHING AT A LAKE
           </p>
-        </div> */}
+        </section>
       </main>
     </div>
   );

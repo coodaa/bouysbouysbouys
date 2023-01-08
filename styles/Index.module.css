@@ -62,14 +62,14 @@
 
 .intro {
   height: 100vh;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .intro video {
   height : 100%;
   width : 100%;
   object-fit: cover;
-  border: 2px solid green;
+  /* border: 2px solid green; */
 }
 
 .intro h1 {
@@ -84,18 +84,18 @@
 }
 
 .section {
-  height: 100vh;
-  color: pink;
-  border: 2px solid blue;
-  background-color: white;
-
+  height: 50vh;
+  /* color: pink; */
+  /* border: 2px solid blue; */
+  /* background-color: white; */
 }
 
-.section h1 {
-  margin: auto auto;
-  padding-top: 45vh;
+.section p {
+  margin: auto ;
+  padding-top: 10vh;
+  width: 80%;
   text-align: center;
-  font-size: 80px;
+  font-size: 1.5rem;
 }
 
 @media only screen and (min-width: 992px) {
