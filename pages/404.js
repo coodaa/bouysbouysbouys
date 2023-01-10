@@ -1,15 +1,21 @@
-import Link from 'next/link'
-import styles from '../styles/Home.module.scss';
-
+import Link from "next/link";
+import styles from "../styles/404.module.scss";
 
 const NotFound = () => {
   return (
-    <div className={styles.container}>
-      <h1>HOOOPS</h1>
-      <h2>That page cannot be found.</h2>
-      <p>Go back to <Link href="/" legacyBehavior><a>Portfolio</a></Link></p>
+    <div className={styles.fourofour}>
+      <div className={styles.row}>
+        <h1 className={styles.flexitem}>HOOOPS</h1>
+        <h2 className={styles.flexitem}>That page cannot be found.</h2>
+        <div className={styles.flexitem}>
+          Go back to{" "}
+          <Link href="/" legacyBehavior>
+            <h2 className={styles.item}>Main Page</h2>
+          </Link>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default NotFound;
