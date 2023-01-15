@@ -48,7 +48,7 @@ export function getInterpolators() {
     }
   }
 
-  function thirdSectionInterpolator(proportion) {}
+  // function thirdSectionInterpolator(proportion) {}
 
   return {
     firstSectionInterpolator,
