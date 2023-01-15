@@ -1,15 +1,15 @@
-import Footer from "./Footer"
-import Navbar from "./Navbar"
-import styles from '../styles/Home.module.scss';
+import Footer from "./Footer";
+import Navbar from "./Navbar";
+import styles from "../styles/Home.module.scss";
 
 const Layout = ({ children }) => {
   return (
     <div className={styles.container}>
       <Navbar />
-      { children }
+      {children}
       <Footer />
     </div>
   );
-}
+};
 
 export default Layout;

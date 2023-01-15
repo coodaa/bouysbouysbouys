@@ -1,9 +1,12 @@
 import Head from "next/head";
-import styles from "../styles/Index.module.css";
-import { useEffect, useState, useRef } from "react";
+import styles from "../styles/Index.module.scss";
+import { useEffect, useState, useRef, useMemo } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SplitTextToChars from "../components/SplitTextToChars.js";
+import StickyView from "../components/StickyView.js";
+import ScrollContext from "../components/ScrollContext.js";
+import { getInterpolators } from "../components/Interpolators.js";
 
 export default function Home() {
   //split chars
