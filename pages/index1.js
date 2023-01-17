@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import styles from "../styles/Index1.module.scss";
 
 export default function Full(props) {
   useEffect(() => {
@@ -62,10 +63,12 @@ export default function Full(props) {
           margin: 0 0 10px 0;
           position: relative;
           display: inline-block;
-          background-color: green);
+          background-color: rgba(255, 255, 255, 1);
+          border: 2px solid red;
         }
         .orangeWrapper {
           padding: 0;
+          border: 5px solid blue;
         }
       `}</style>
     </div>
