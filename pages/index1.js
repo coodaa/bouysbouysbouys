@@ -20,6 +20,7 @@ export default function Full(props) {
     tl.from(".orange", {
       scale: 0.5,
       ease: "none",
+      transformOrigin: "left top",
     }).from(
       ".line-2",
       {
