@@ -4,9 +4,6 @@ import { useEffect, useState, useRef, useMemo } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SplitTextToChars from "../components/SplitTextToChars.js";
-import StickyView from "../components/StickyView.js";
-import ScrollContext from "../components/ScrollContext.js";
-import { getInterpolators } from "../components/Interpolators.js";
 
 export default function Home() {
   //split chars
