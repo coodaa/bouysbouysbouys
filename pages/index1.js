@@ -39,10 +39,6 @@ export default function Full(props) {
         <h2>scroll down</h2>
       </div>
 
-      <section className="panel red">
-        <h2>more</h2>
-      </section>
-
       <div className="panel orangeWrapper">
         <section className="panel orange">
           <h2>
@@ -50,8 +46,6 @@ export default function Full(props) {
           </h2>
         </section>
       </div>
-
-      <section className="panel purple"></section>
 
       <section className="panel gray">DONE!</section>
 
@@ -68,7 +62,10 @@ export default function Full(props) {
         }
         .orangeWrapper {
           padding: 0;
-          border: 5px solid blue;
+        }
+        .orange {
+          background: red;
+          border: 2px solid green;
         }
       `}</style>
     </div>
