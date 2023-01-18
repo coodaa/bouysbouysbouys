@@ -110,36 +110,6 @@ export default function Home() {
     });
   }, [IntroVideoRef, videoRef]);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".orangeWrapper",
-        scrub: true,
-        pin: true,
-        start: "50% 50%",
-        end: "+=200%",
-      },
-    });
-
-    tl.from(".orange", {
-      scale: 0.5,
-      ease: "none",
-      transformOrigin: "left top",
-    }).from(
-      ".line-2",
-      {
-        scaleX: 0,
-        ease: "none",
-        transformOrigin: "left top",
-      },
-      0
-    );
-
-    return () => {};
-  }, []);
-
   return (
     <div>
       <Head>
@@ -149,32 +119,26 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <div className="blue">
-          <div className={styles.char}>
-            <p className={styles["down-up-text"]} ref={upTextRef}>
-              creative
-            </p>
-            <p className={styles["down-up-text"]} ref={upTextRef2}>
-              developer
-            </p>
-          </div>
+        <div className={styles.char}>
+          <p className={styles["down-up-text"]} ref={upTextRef}>
+            creative
+          </p>
+          <p className={styles["down-up-text"]} ref={upTextRef2}>
+            developer
+          </p>
         </div>
 
-        <div className="orangeWrapper">
-          <section className="orange">
-            <div ref={IntroVideoRef} className={styles.intro}>
-              {/* <h1 className={styles.float}>florian schneider</h1> */}
-              {/* <h1 className={styles.float}>ist ein toller typ</h1> */}
-              {/* <h1 className={styles.float}>book me</h1> */}
-              <video
-                className={styles.video}
-                autoPlay={true}
-                id="video"
-                ref={videoRef}
-                src={"/videoBG.mp4"}
-              ></video>
-            </div>
-          </section>
+        <div ref={IntroVideoRef} className={styles.intro}>
+          {/* <h1 className={styles.float}>florian schneider</h1> */}
+          {/* <h1 className={styles.float}>ist ein toller typ</h1> */}
+          {/* <h1 className={styles.float}>book me</h1> */}
+          <video
+            className={styles.video}
+            autoPlay={true}
+            id="video"
+            ref={videoRef}
+            src={"/videoBG.mp4"}
+          ></video>
         </div>
         {/* <div className={styles.layout}>
           <div className={styles.char}>
@@ -186,42 +150,14 @@ export default function Home() {
             </p>
           </div>
         </div> */}
-        <section className="gray">
-          <section className={styles.section}>
-            <p>
-              PASSIONATE {"\n"}ABOUT WEB TECHNOLOGIES. I LOVE WORKING AT THE
-              INTERSECTION OF CREATIVITY AND USER FRIENDLY INTERFACES. I CREATE
-              MEMORABLE WEB EXPERIENCES. WHEN I&quot;M NOT BUILDING OR EXPLORING
-              NEW WEB EXPERIENCES, I&quot;M PROBABLY FISHING AT A LAKE
-            </p>
-          </section>
+        <section className={styles.section}>
+          <p>
+            PASSIONATE {"\n"}ABOUT WEB TECHNOLOGIES. I LOVE WORKING AT THE
+            INTERSECTION OF CREATIVITY AND USER FRIENDLY INTERFACES. I CREATE
+            MEMORABLE WEB EXPERIENCES. WHEN I&quot;M NOT BUILDING OR EXPLORING
+            NEW WEB EXPERIENCES, I&quot;M PROBABLY FISHING AT A LAKE
+          </p>
         </section>
-        <style jsx>{`
-          .blue {
-            background: blue;
-          }
-          .line {
-            width: 100%;
-            height: 8px;
-            margin: 0 0 10px 0;
-            position: relative;
-            display: inline-block;
-            background-color: rgba(255, 255, 255, 1);
-            border: 2px solid red;
-          }
-          .orangeWrapper {
-            padding: 0;
-          }
-          .orange {
-            background: red;
-            border: 2px solid green;
-            height: 50vh;
-          }
-          .gray {
-            background: gray;
-            height: 50vh;
-          }
-        `}</style>
       </main>
     </div>
   );

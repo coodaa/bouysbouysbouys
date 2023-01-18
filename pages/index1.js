@@ -37,23 +37,23 @@ export default function Full(props) {
   return (
     <div>
       <div className="blue">
-        <h2>scroll down</h2>
+        <h2>CREATIVE DEVELOPER</h2>
       </div>
 
       <div className="orangeWrapper">
         <section className="orange">
           <h2>
-            <span></span>This panel grows in size
+            <span></span>VIDEO
           </h2>
         </section>
       </div>
 
-      <section className="gray">DONE!</section>
+      <section className="gray">ABOUT TEXT!</section>
 
       <style jsx>{`
         .blue {
           background: blue;
-          height: 50vh;
+          height: 20vh;
         }
         .line {
           width: 100%;
@@ -70,7 +70,7 @@ export default function Full(props) {
         .orange {
           background: red;
           border: 2px solid green;
-          height: 50vh;
+          height: 20vh;
         }
         .gray {
           background: gray;
