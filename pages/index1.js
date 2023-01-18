@@ -35,25 +35,28 @@ export default function Full(props) {
   }, []);
 
   return (
-    <div className="main">
-      <div className="description panel blue">
+    <div>
+      <div className="blue">
         <h2>scroll down</h2>
       </div>
 
-      <div className="panel orangeWrapper">
-        <section className="panel orange">
+      <div className="orangeWrapper">
+        <section className="orange">
           <h2>
-            <span className="line line-2"></span>This panel grows in size
+            <span></span>This panel grows in size
           </h2>
         </section>
       </div>
 
-      <section className="panel gray">DONE!</section>
+      <section className="gray">DONE!</section>
 
       <style jsx>{`
+        .blue {
+          background: blue;
+          height: 50vh;
+        }
         .line {
           width: 100%;
-          max-width: 800px;
           height: 8px;
           margin: 0 0 10px 0;
           position: relative;
@@ -67,6 +70,11 @@ export default function Full(props) {
         .orange {
           background: red;
           border: 2px solid green;
+          height: 50vh;
+        }
+        .gray {
+          background: gray;
+          height: 50vh;
         }
       `}</style>
     </div>
