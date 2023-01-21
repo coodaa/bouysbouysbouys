@@ -1,16 +1,19 @@
 import Head from "next/head";
-import styles from "../styles/imprint.module.scss";
+import styles from "../styles/legal.module.scss";
 
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>bouysbouysbouys</title>
-        <meta name="description" content="bouys portfolio" />
+        <title>Legal Notice</title>
+        <meta
+          name="description"
+          content="florian schneider legal notice portfolio"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1>Impressum</h1>
+        <h1>Legal Notice</h1>
         <h4>Verantwortlich für die Inhalte (gemäß § 5 TMG / § 55 II RStV)</h4>
         <p className={styles.address}>
           Florian Schneider Gollierstraße 17 80339 München

@@ -24,8 +24,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>bouysbouysbouys</title>
-        <meta name="description" content="bouys portfolio" />
+        <title>Florian Schneider | Work</title>
+        <meta name="description" content="work florian schneider portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.work}>

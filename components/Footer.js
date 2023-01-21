@@ -32,7 +32,7 @@ const Footer = () => {
         </ul>
         <ul className={styles.commalist}>
           <li className={styles.myself}>
-            <Link href="/imprint" legacyBehavior>
+            <Link href="/legal" legacyBehavior>
               <a className={styles.link}>Legal Notice</a>
             </Link>
             <a>2022</a>

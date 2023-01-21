@@ -4,7 +4,7 @@ import Video from "../components/Video";
 const Home = () => (
   <>
     <Head>
-      <title>My Video</title>
+      <title>My hhh</title>
     </Head>
     <Video />
   </>

@@ -113,8 +113,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>bouysbouysbouys</title>
-        <meta name="description" content="bouys portfolio" />
+        <title>Florian Schneider</title>
+        <meta name="description" content="florian schneider portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

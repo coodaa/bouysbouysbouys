@@ -6,6 +6,7 @@ import Link from "next/link";
 import SplitTextToChars from "../components/SplitTextToChars.js";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
+import Head from "next/head";
 
 const options = {
   complexity: 0.6,
@@ -87,19 +88,29 @@ export default function Contact() {
   }, []);
 
   return (
-    <div
-      className={styles.main}
-      onClick={() => change(blobs.editable(options))}
-    >
-      <Background svg={props3.svg} fill={props3.fill} />
-      <h1 className={styles.text} ref={upTextRef}>
-        send me a message
-      </h1>
-      <Link href="mailto:schneider.f@me.com" legacyBehavior>
-        <h3 className={styles.text} ref={upTextRef2}>
-          hey@bouysbouysbouys.com
-        </h3>
-      </Link>
+    <div>
+      <Head>
+        <title>Florian Schneider | Contact</title>
+        <meta
+          name="description"
+          content="contact florian schneider portfolio"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div
+        className={styles.main}
+        onClick={() => change(blobs.editable(options))}
+      >
+        <Background svg={props3.svg} fill={props3.fill} />
+        <h1 className={styles.text} ref={upTextRef}>
+          send me a message
+        </h1>
+        <Link href="mailto:schneider.f@me.com" legacyBehavior>
+          <h3 className={styles.text} ref={upTextRef2}>
+            hey@bouysbouysbouys.com
+          </h3>
+        </Link>
+      </div>
     </div>
   );
 }
