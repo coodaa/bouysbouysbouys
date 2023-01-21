@@ -53,7 +53,7 @@ export default function Full(props) {
       <style jsx>{`
         .blue {
           background: blue;
-          height: 30vh;
+          height: 10vh;
         }
         .line {
           width: 100%;
@@ -68,11 +68,11 @@ export default function Full(props) {
         .orange {
           background: red;
           border: 2px solid green;
-          height: 20vh;
+          height: 30vh;
         }
         .gray {
           background: gray;
-          height: 30vh;
+          height: 10vh;
         }
       `}</style>
     </div>
