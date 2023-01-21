@@ -2,10 +2,14 @@
   min-height: 100vh;
 }
 
-.animatedDiv {
-  margin-top: 30vh;
-  background: #dc143c;
-  min-height: 30vh;
-  min-width: 50%;
-  position: absolute;
+.intro {
+  height: 100vh;
+  border: 2px solid red;
+}
+
+.intro video {
+  height : 100%;
+  width : 100%;
+  // object-fit: cover;
+  border: 2px solid green;
 }
