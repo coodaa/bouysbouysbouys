@@ -1,17 +1,14 @@
-.line {
-  width: 100%;
-  max-width: 800px;
-  height: 8px;
-  margin: 0 0 10px 0;
-  position: relative;
-  display: inline-block;
-  background-color: rgba(255, 255, 255, 1);
-  border: 2px solid red;
+.blue {
+  background: blue;
+  height: 10vh;
 }
-.orangeWrapper {
-  padding: 0;
-}
+
 .orange {
   background: red;
   border: 2px solid green;
+  height: 30vh;
+}
+.gray {
+  background: gray;
+  height: 10vh;
 }
