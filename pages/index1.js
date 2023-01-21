@@ -53,7 +53,7 @@ export default function Full(props) {
       <style jsx>{`
         .blue {
           background: blue;
-          height: 20vh;
+          height: 30vh;
         }
         .line {
           width: 100%;
@@ -64,9 +64,7 @@ export default function Full(props) {
           background-color: rgba(255, 255, 255, 1);
           border: 2px solid red;
         }
-        .orangeWrapper {
-          padding: 0;
-        }
+
         .orange {
           background: red;
           border: 2px solid green;
@@ -74,7 +72,7 @@ export default function Full(props) {
         }
         .gray {
           background: gray;
-          height: 50vh;
+          height: 30vh;
         }
       `}</style>
     </div>
