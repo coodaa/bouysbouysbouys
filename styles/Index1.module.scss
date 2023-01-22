@@ -1,3 +1,7 @@
+.main {
+  min-height: 100vh;
+}
+
 .blue {
   background: blue;
   height: 10vh;
@@ -5,7 +9,7 @@
 
 .orange {
   background: red;
-  border: 2px solid green;
+  // border: 2px solid green;
   height: 30vh;
 }
 .gray {

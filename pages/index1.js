@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import styles from "../styles/Index1.module.scss";
 
-export default function Full() {
+export default function Full(props) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -20,7 +21,15 @@ export default function Full() {
       scale: 0.5,
       ease: "none",
       transformOrigin: "left top",
-    });
+    }).from(
+      ".line-2",
+      {
+        scaleX: 0,
+        ease: "none",
+        transformOrigin: "left top",
+      },
+      0
+    );
   }, []);
 
   return (
@@ -43,6 +52,15 @@ export default function Full() {
         .blue {
           background: blue;
           height: 10vh;
+        }
+        .line {
+          width: 100%;
+          height: 8px;
+          margin: 0 0 10px 0;
+          position: relative;
+          display: inline-block;
+          background-color: rgba(255, 255, 255, 1);
+          border: 2px solid red;
         }
 
         .orange {
