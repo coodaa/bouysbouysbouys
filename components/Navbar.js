@@ -1,10 +1,22 @@
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
+import Hamburger from "../components/Hamburger";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+
+  const toggleHamburger = () => {
+    setHamburgerOpen(!hamburgerOpen);
+  };
+
   return (
     <nav className={styles.nav}>
-      <ul className={styles.commalist}>
+      <ul
+        className={`${styles.commalist} ${
+          hamburgerOpen ? styles.inline : styles.none
+        }`}
+      >
         <li>
           <Link className={styles.link} href="/">
             Florian Schneider
@@ -28,6 +40,9 @@ export default function Navbar() {
           </Link>
         </li>
       </ul>
+      <div className={styles.hamburger} onClick={toggleHamburger}>
+        <Hamburger />
+      </div>
     </nav>
   );
 }
