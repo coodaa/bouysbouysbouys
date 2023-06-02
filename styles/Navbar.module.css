@@ -1,11 +1,8 @@
-.container {
-  padding: 0 .1rem;
-  margin: auto;
-}
-
-.myself {
+.nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 2vh;
+  font-size: 1.5em;
 }
 
 .link {
@@ -41,46 +38,12 @@
   margin-bottom: 1vh;
 }
 
-.footer {
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-  font-size: 1.5em;
-  }
-
-.imprint {
-  list-style: none;
-  padding: 0.5rem;
-  display: flex;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
 
 @media only screen and (min-width: 992px) {
 
-  .footer {
+  .nav {
     margin-top: 5vh;
     font-size: 1.6em;
-  }
-
-  .container {
-    padding: 0 4rem;
-  }
-
-  .row {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .imprint {
-    padding: 0px;
-    display: flex;
-    list-style: none;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    justify-content: space-between;
-    font-size: .8rem;
-    margin-top: 5vh;
-    margin-bottom: 3vh;
   }
 
   .commalist {
@@ -109,4 +72,5 @@
   .commalist li:last-child::after {
     content: "";
   }
+
 }
