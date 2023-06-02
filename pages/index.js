@@ -147,7 +147,7 @@ export default function Home() {
             </p>
             <p className={styles["down-up-text"]} ref={upTextRef4}>
               schneider
-            </p>
+            </p> hier kommt ein f[;leste]
           </div>
         </div> */}
         <section className={styles.section}>
