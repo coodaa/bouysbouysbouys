@@ -90,6 +90,16 @@ export default function Home() {
             src={"/videoBG.mp4"}
           ></video>
         </div>
+        {/* <div className={styles.layout}>
+          <div className={styles.char}>
+            <p className={styles["down-up-text"]} ref={upTextRef3}>
+              florian
+            </p>
+            <p className={styles["down-up-text"]} ref={upTextRef4}>
+              schneider
+            </p> hier kommt ein f[;leste]
+          </div>
+        </div> */}
 
         <section className={styles.section}>
           <p>
