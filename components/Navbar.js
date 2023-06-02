@@ -1,17 +1,22 @@
+import { useState } from "react";
 import styles from "../styles/Navbar.module.css";
 import Link from "next/link";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const menuClass = isOpen ? styles.commalistOpen : styles.commalist;
+
   return (
     <nav className={styles.nav}>
       <ul className={styles.commalist}>
         <li>
-          <Link className={styles.link} href="/">
-            Florian Schneider
+          <Link href="/" legacyBehavior>
+            <a className={styles.link}>Florian Schneider</a>
           </Link>
         </li>
       </ul>
-      <ul className={styles.commalist}>
+      <ul className={menuClass}>
         <li>
           <Link href="/work" legacyBehavior>
             <a className={styles.link}>Work</a>
@@ -28,6 +33,9 @@ export default function Navbar() {
           </Link>
         </li>
       </ul>
+      <div className={styles.menu} onClick={() => setIsOpen(!isOpen)}>
+        Menu
+      </div>
     </nav>
   );
 }

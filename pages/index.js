@@ -129,9 +129,6 @@ export default function Home() {
         </div>
 
         <div ref={IntroVideoRef} className={styles.intro}>
-          {/* <h1 className={styles.float}>florian schneider</h1> */}
-          {/* <h1 className={styles.float}>ist ein toller typ</h1> */}
-          {/* <h1 className={styles.float}>book me</h1> */}
           <video
             className={styles.video}
             autoPlay={true}
