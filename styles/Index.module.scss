@@ -1,3 +1,52 @@
+/* .main {
+  height: 400vh;
+} */
+
+/* .AppHeader {
+  top: 0;
+  position: sticky;
+  margin-top: 5vh;
+} */
+
+/* .img {
+  width:100%;
+  height: auto;
+} */
+
+/* .layout {
+  position: absolute;
+  right: 3%;
+} */
+
+/* .section {
+  height: 100vh;
+  color: black;
+  background-color: white;
+} */
+
+/* .section h1 {
+  margin: auto ;
+  text-align: center;
+  font-size: 7rem;
+ } */
+
+
+/* .video,
+#video {
+  width: 20vw;
+  height: auto;
+} */
+
+/* .float {
+  position: relative;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-top: 45vh;
+  margin-bottom: 80vh;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
 .char {
   display: inline-block;
   font-size: calc(2vw + 4vh + 2vmin);
@@ -13,24 +62,15 @@
 
 .intro {
   height: 100vh;
+  /* border: 2px solid red; */
 }
 
 .intro video {
   height : 100%;
   width : 100%;
   object-fit: cover;
+  /* border: 2px solid green; */
 }
-
-// .video {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   height: 100%;
-//   width: 50%;
-//   transform: translateX(-50%);
-//   object-fit: cover;
-//   transition: all 1s ease;
-// }
 
 .intro h1 {
   position: absolute;
@@ -40,11 +80,16 @@
   font-size: 3rem;
   color: white;
   text-transform: uppercase;
+
 }
 
 .section {
   height: 80vh;
+  /* color: pink; */
+  /* border: 2px solid blue; */
+  /* background-color: white; */
   word-wrap: break-word;
+
 }
 
 .section p {
@@ -54,6 +99,7 @@
   text-align:center;
   font-size: 1.5rem;
   word-wrap:break-word;
+
 }
 
 @media only screen and (min-width: 992px) {
@@ -69,8 +115,20 @@
     margin-bottom: 2vh;
   }
 
+  .float {
+    font-size: 4rem;
+  }
+
+  .layout {
+    position: absolute;
+    right: 0;
+  }
+
   .section {
     height: 30vh;
+    /* color: pink; */
+    /* border: 2px solid blue; */
+    /* background-color: white; */
   }
 
   .section p {
@@ -80,4 +138,50 @@
     text-align: center;
     font-size: 1.5rem;
   }
+}
+
+
+// @use '../global/variables';
+
+.full-sticky-content .full-directions {
+  margin-bottom: 2rem;
+}
+
+.full-sticky-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.full-sticky-content * {
+  text-align: center;
+}
+
+.full-sticky-content.sticky-content-1 {
+  background: red;
+  color: #fff;
+}
+
+.full-sticky-content.sticky-content-2 {
+  color: #fff;
+}
+
+.full-sticky-content.sticky-content-2 .full-sticky-foreground {
+  transition: all 0.5s;
+}
+
+.full-sticky-foreground .active {
+  background: red;
+  color: #fff;
+}
+
+.full-sticky-background {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: blue;
 }
