@@ -104,13 +104,13 @@ export default function Home() {
             className={styles["down-up-text"]}
             ref={(el) => (upTextRefs.current[2] = el)}
           >
-            florian
+            {/* florian */}
           </p>
           <p
             className={styles["down-up-text"]}
             ref={(el) => (upTextRefs.current[3] = el)}
           >
-            schneider
+            {/* schneider */}
           </p>
         </div>
       </main>
