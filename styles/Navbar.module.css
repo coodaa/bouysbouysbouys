@@ -1,13 +1,12 @@
 .nav {
   display: flex;
-  justify-content: flex-end;  /* Change here */
-  align-items: center;  /* Optional: To align items vertically center */
+  justify-content: flex-end;
+  align-items: center;
   margin-top: 2vh;
   font-size: 1.5em;
 }
 
 .link {
-  display: none;
   position: relative;
   color: white;
 }
@@ -31,31 +30,47 @@
 }
 
 .commalist {
-  list-style: none;
-  flex-direction: column;
-  padding: .1rem;
   display: none;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
 }
 
 .commalistOpen {
   display: flex;
   flex-direction: column;
-  position: fixed;    /* Make the menu fixed */
-  top: 0;             /* Cover the entire viewport */
-  right: 0;           /* Cover the entire viewport */
-  bottom: 0;          /* Cover the entire viewport */
-  left: 0;            /* Cover the entire viewport */
-  justify-content: center; /* Center items vertically */
-  align-items: center; /* Center items horizontally */
-  background-color:red; /* Add a background color */
-  color: #fff; /* Change text color */
+  justify-content: center;
+  /* align-items: end; */
+  text-align: right;
+  position: fixed;
+  top: 4vh;
+  right: 0;
+  bottom: 0;
+  left: 2;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 9999;
+}
+
+.commalistOpen li {
+  list-style-type: none;
+  padding: 1em ;
+}
+
+.commalistOpen a {
+  color: #fff; /* remove the !important */
+  text-decoration: none;
+  font-size: 2em;
 }
 
 .menu {
-  display: block;
+  display: none;
   cursor: pointer;
+  color: white; /* Add color so the button is visible */
+}
+
+@media only screen and (max-width: 992px) {
+  .menu {
+    display: block;
+  }
 }
 
 @media only screen and (min-width: 992px) {

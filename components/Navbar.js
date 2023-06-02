@@ -4,9 +4,6 @@ import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const menuClass = isOpen ? styles.commalistOpen : styles.commalist;
-
   return (
     <nav className={styles.nav}>
       <ul className={styles.commalist}>
@@ -16,7 +13,7 @@ export default function Navbar() {
           </Link>
         </li>
       </ul>
-      <ul className={menuClass}>
+      <ul className={isOpen ? styles.commalistOpen : styles.commalist}>
         <li>
           <Link href="/work" legacyBehavior>
             <a className={styles.link}>Work</a>
@@ -34,7 +31,7 @@ export default function Navbar() {
         </li>
       </ul>
       <div className={styles.menu} onClick={() => setIsOpen(!isOpen)}>
-        Menu
+        {isOpen ? "Close" : "Menu"}
       </div>
     </nav>
   );
