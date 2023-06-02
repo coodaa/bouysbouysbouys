@@ -1,37 +1,87 @@
 import Head from "next/head";
 import styles from "../styles/Index.module.scss";
-import { useEffect, useRef } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SplitTextToChars from "../components/SplitTextToChars.js";
 
 export default function Home() {
-  const upTextRefs = useRef([null, null, null, null]);
-  const IntroVideoRef = useRef(null);
-  const videoRef = useRef(null);
-
-  const animateText = (ref, duration, delay, stagger) => {
-    if (!ref.current) return;
-    const chars = SplitTextToChars(ref.current);
-    gsap.set(ref.current, { perspective: 200 });
+  //split chars
+  const upTextRef = useRef(null);
+  useEffect(() => {
+    if (!upTextRef.current) return;
+    const chars = SplitTextToChars(upTextRef.current);
+    gsap.set(upTextRef.current, { perspective: 200 });
     gsap.from(
       chars,
       {
-        duration,
-        delay,
+        duration: 0.8,
+        delay: 0.0,
         y: +90,
-        stagger,
+        stagger: 0.09,
       },
       "+=0"
     );
-  };
+  }, []);
+
+  const upTextRef2 = useRef(null);
+  useEffect(() => {
+    if (!upTextRef2.current) return;
+    const chars = SplitTextToChars(upTextRef2.current);
+    gsap.set(upTextRef2.current, { perspective: 200 });
+    gsap.from(
+      chars,
+      {
+        duration: 0.8,
+        delay: -1.355,
+        y: +90,
+        stagger: 0.09,
+      },
+      "+=0"
+    );
+  }, []);
+
+  const upTextRef3 = useRef(null);
+  useEffect(() => {
+    if (!upTextRef3.current) return;
+    const chars = SplitTextToChars(upTextRef3.current);
+    gsap.set(upTextRef3.current, { perspective: 200 });
+    gsap.from(
+      chars,
+      {
+        duration: 0.4,
+        delay: 0.0,
+        y: +90,
+        stagger: 0.03,
+      },
+      "+=0"
+    );
+  }, []);
+
+  const upTextRef4 = useRef(null);
+  useEffect(() => {
+    if (!upTextRef4.current) return;
+    const chars = SplitTextToChars(upTextRef4.current);
+    gsap.set(upTextRef4.current, { perspective: 200 });
+    gsap.from(
+      chars,
+      {
+        duration: 0.4,
+        delay: 0.0,
+        y: +90,
+        stagger: 0.03,
+      },
+      "+=0"
+    );
+  }, []);
+
+  //end split chars
+
+  //video on scroll
+  const IntroVideoRef = useRef(null);
+  const videoRef = useRef(null);
 
   useEffect(() => {
-    animateText(upTextRefs.current[0], 0.8, 0.0, 0.09);
-    animateText(upTextRefs.current[1], 0.8, -1.355, 0.09);
-    animateText(upTextRefs.current[2], 0.4, 0.0, 0.03);
-    animateText(upTextRefs.current[3], 0.4, 0.0, 0.03);
-
     gsap.registerPlugin(ScrollTrigger);
 
     videoRef.current.currentTime = 0;
@@ -42,7 +92,10 @@ export default function Home() {
       pin: IntroVideoRef.current,
       delay: 5.0,
       start: "center center",
+      // end: "+=20000",
       end: "9000",
+
+      // markers: true,
       onUpdate: function (self) {
         if (videoRef.current) {
           const scrollPos = self.progress;
@@ -55,7 +108,7 @@ export default function Home() {
         }
       },
     });
-  }, [upTextRefs, IntroVideoRef, videoRef]);
+  }, [IntroVideoRef, videoRef]);
 
   return (
     <div>
@@ -67,21 +120,18 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.char}>
-          <p
-            className={styles["down-up-text"]}
-            ref={(el) => (upTextRefs.current[0] = el)}
-          >
+          <p className={styles["down-up-text"]} ref={upTextRef}>
             creative
           </p>
-          <p
-            className={styles["down-up-text"]}
-            ref={(el) => (upTextRefs.current[1] = el)}
-          >
+          <p className={styles["down-up-text"]} ref={upTextRef2}>
             developer
           </p>
         </div>
 
         <div ref={IntroVideoRef} className={styles.intro}>
+          {/* <h1 className={styles.float}>florian schneider</h1> */}
+          {/* <h1 className={styles.float}>ist ein toller typ</h1> */}
+          {/* <h1 className={styles.float}>book me</h1> */}
           <video
             className={styles.video}
             autoPlay={true}
@@ -97,10 +147,9 @@ export default function Home() {
             </p>
             <p className={styles["down-up-text"]} ref={upTextRef4}>
               schneider
-            </p> hier kommt ein f[;leste]
+            </p>
           </div>
         </div> */}
-
         <section className={styles.section}>
           <p>
             PASSIONATE {"\n"}ABOUT WEB TECHNOLOGIES. I LOVE WORKING AT THE
@@ -109,20 +158,6 @@ export default function Home() {
             NEW WEB EXPERIENCES, I&quot;M PROBABLY FISHING AT A LAKE
           </p>
         </section>
-        <div className={styles.char}>
-          <p
-            className={styles["down-up-text"]}
-            ref={(el) => (upTextRefs.current[2] = el)}
-          >
-            {/* florian */}
-          </p>
-          <p
-            className={styles["down-up-text"]}
-            ref={(el) => (upTextRefs.current[3] = el)}
-          >
-            {/* schneider */}
-          </p>
-        </div>
       </main>
     </div>
   );

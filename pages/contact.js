@@ -61,8 +61,8 @@ export default function Contact() {
     gsap.from(
       chars,
       {
-        duration: 0.5,
-        delay: 0.3,
+        duration: 0.4,
+        delay: 0,
         y: +80,
         stagger: 0.03,
       },
