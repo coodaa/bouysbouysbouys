@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <nav className={styles.nav}>
-      <ul className={styles.commalist}>
+      <ul className={`${styles.commalist} `}>
         <li>
           <Link className={styles.link} href="/">
             Florian Schneider
