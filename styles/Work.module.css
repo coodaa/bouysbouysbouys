@@ -1,5 +1,5 @@
 .work {
-  display: grid;
+  display: flex;
   place-content: center;
   height: 100vh;
 }
