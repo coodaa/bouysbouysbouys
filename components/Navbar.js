@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
 import styles from "../styles/Navbar.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import React, { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +24,10 @@ export default function Navbar() {
     }, 500);
   };
 
+  const checkActive = (path) => {
+    return router.pathname === path ? styles.active : "";
+  };
+
   return (
     <nav className={styles.nav}>
       <div className={styles.leftSide}>
@@ -33,15 +37,7 @@ export default function Navbar() {
           </a>
         </Link>
       </div>
-      <ul
-        className={
-          isOpen
-            ? menuClass === styles.commalist
-              ? styles.commalistOpen
-              : styles.commalistClose
-            : styles.commalist
-        }
-      >
+      <ul className={isOpen ? styles.commalistOpen : styles.commalist}>
         <div className={styles.hideOnDesktop}>
           <li>
             <Link href="/" legacyBehavior>
