@@ -1,11 +1,12 @@
+import { useEffect, useState } from "react";
 import styles from "../styles/Navbar.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -17,11 +18,18 @@ export default function Navbar() {
   }, [isOpen]);
 
   const closeMenu = () => {
-    setIsClosing(true);
+    setIsOpen(false);
+  };
+
+  const handleClick = (path) => {
+    setIsAnimating(true);
     setTimeout(() => {
-      setIsOpen(false);
-      setIsClosing(false);
-    }, 500);
+      router.push(path).then(() => {
+        setIsAnimating(false);
+        setShouldAnimate(true);
+        closeMenu();
+      });
+    }, 800);
   };
 
   const checkActive = (path) => {
@@ -29,61 +37,54 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={styles.nav}>
-      <div className={styles.leftSide}>
-        <Link href="/" legacyBehavior>
-          <a className={styles.link} onClick={closeMenu}>
+    <div
+      className={`${styles.pageTransition} ${
+        isAnimating ? styles.animate : ""
+      }`}
+    >
+      <nav className={`${styles.nav} ${shouldAnimate ? styles.animate : ""}`}>
+        <div className={styles.leftSide} onClick={() => handleClick("/")}>
+          <Link className={styles.link} href="/">
             Florian Schneider
-          </a>
-        </Link>
-      </div>
-      <ul className={isOpen ? styles.commalistOpen : styles.commalist}>
-        <div className={styles.hideOnDesktop}>
-          <li>
-            <Link href="/" legacyBehavior>
-              <a
-                className={`${styles.link} ${checkActive("/")}`}
-                onClick={closeMenu}
-              >
-                Home
-              </a>
-            </Link>
-          </li>
+          </Link>
         </div>
-        <li>
-          <Link href="/work" legacyBehavior>
-            <a
+        <ul className={isOpen ? styles.commalistOpen : styles.commalist}>
+          <div className={styles.hideOnDesktop}>
+            <li onClick={() => handleClick("/")}>
+              <Link className={`${styles.link} ${checkActive("/")}`} href="/">
+                Home
+              </Link>
+            </li>
+          </div>
+          <li onClick={() => handleClick("/work")}>
+            <Link
               className={`${styles.link} ${checkActive("/work")}`}
-              onClick={closeMenu}
+              href="/work"
             >
               Work
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/about" legacyBehavior>
-            <a
+            </Link>
+          </li>
+          <li onClick={() => handleClick("/about")}>
+            <Link
               className={`${styles.link} ${checkActive("/about")}`}
-              onClick={closeMenu}
+              href="/about"
             >
               About
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/contact" legacyBehavior>
-            <a
+            </Link>
+          </li>
+          <li onClick={() => handleClick("/contact")}>
+            <Link
               className={`${styles.link} ${checkActive("/contact")}`}
-              onClick={closeMenu}
+              href="/contact"
             >
               Contact
-            </a>
-          </Link>
-        </li>
-      </ul>
-      <div className={styles.menu} onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "Close" : "Menu"}
-      </div>
-    </nav>
+            </Link>
+          </li>
+        </ul>
+        <div className={styles.menu} onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? "Close" : "Menu"}
+        </div>
+      </nav>
+    </div>
   );
 }

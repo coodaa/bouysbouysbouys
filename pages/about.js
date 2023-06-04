@@ -75,7 +75,7 @@ export default function Home() {
             </button>
           </div>
           <p id="moreTM">
-            I plan, manage and controll your art piece, exhibition, theatere
+            I plan, manage and controll your art piece, exhibition, theatre
             performance.
           </p>
         </div>
