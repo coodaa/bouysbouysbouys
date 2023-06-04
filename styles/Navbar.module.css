@@ -37,13 +37,23 @@
   display: none;
 }
 
+@keyframes slideUp {
+  0% { top: 100vh; }
+  100% { top: 0; }
+}
+
+@keyframes slideDown {
+  0% { top: 0; }
+  100% { top: 100vh; }
+}
+
 .commalistOpen {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: right;
   position: fixed;
-  top: 4vh;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -51,7 +61,14 @@
   height: 100vh;
   background-color: black;
   z-index: 9999;
+  animation: slideUp 0.5s ease-in-out forwards;
 }
+
+.commalistClose {
+  animation: slideDown 0.5s ease-in-out forwards;
+}
+
+
 
 .commalistOpen li {
   list-style-type: none;
@@ -73,7 +90,6 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-
 
 @media only screen and (max-width: 992px) {
   .menu {

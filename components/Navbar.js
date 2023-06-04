@@ -5,6 +5,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -16,11 +17,11 @@ export default function Navbar() {
   }, [isOpen]);
 
   const closeMenu = () => {
-    setIsOpen(false);
-  };
-
-  const checkActive = (path) => {
-    return router.pathname === path ? styles.active : "";
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsOpen(false);
+      setIsClosing(false);
+    }, 500);
   };
 
   return (
@@ -32,7 +33,15 @@ export default function Navbar() {
           </a>
         </Link>
       </div>
-      <ul className={isOpen ? styles.commalistOpen : styles.commalist}>
+      <ul
+        className={
+          isOpen
+            ? menuClass === styles.commalist
+              ? styles.commalistOpen
+              : styles.commalistClose
+            : styles.commalist
+        }
+      >
         <div className={styles.hideOnDesktop}>
           <li>
             <Link href="/" legacyBehavior>
