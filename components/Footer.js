@@ -1,7 +1,7 @@
-import styles from "../styles/Home.module.scss";
+import styles from "../styles/Footer.module.css";
 import Link from "next/link";
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.row}>
@@ -32,8 +32,8 @@ const Footer = () => {
         </ul>
         <ul className={styles.commalist}>
           <li className={styles.myself}>
-            <Link href="/legal" legacyBehavior>
-              <a className={styles.link}>Legal Notice</a>
+            <Link className={styles.link} href="/legal">
+              Legal Notice{" "}
             </Link>
             <a>2022</a>
           </li>
@@ -41,6 +41,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

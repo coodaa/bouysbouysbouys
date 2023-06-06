@@ -1,21 +1,19 @@
 import Link from "next/link";
-import styles from "../styles/404.module.scss";
+import styles from "../styles/404.module.css";
 
-const NotFound = () => {
+export default function NotFound() {
   return (
-    <div className={styles.fourofour}>
+    <div className={styles.four}>
       <div className={styles.row}>
         <h1 className={styles.flexitem}>HOOOPS</h1>
         <h2 className={styles.flexitem}>That page cannot be found.</h2>
         <div className={styles.flexitem}>
           Go back to{" "}
-          <Link href="/" legacyBehavior>
-            <h2 className={styles.item}>Main Page</h2>
+          <Link className={styles.link} href="/">
+            Main Page
           </Link>
         </div>
       </div>
     </div>
   );
-};
-
-export default NotFound;
+}

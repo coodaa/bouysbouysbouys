@@ -1,4 +1,4 @@
-.fourofour {
+.four {
   padding: 0 .1rem;
   margin: auto;
   min-height: 100vh;
@@ -22,12 +22,32 @@
   text-align: center;
 }
 
-.item {
-  padding: 30px;
+
+.link {
+  position: relative;
+  color: white;
+}
+
+.link:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.35s ease-in-out;
+}
+
+.link:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 @media only screen and (min-width: 992px) {
-  .fourofour {
+  .four {
     padding: 0 4rem;
   }
 }

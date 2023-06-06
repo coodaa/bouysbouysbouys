@@ -1,6 +1,6 @@
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import styles from "../styles/Home.module.scss";
+import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
 
 const Layout = ({ children }) => {

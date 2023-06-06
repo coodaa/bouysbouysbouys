@@ -3,11 +3,6 @@
   margin: auto;
 }
 
-.myself {
-  display: flex;
-  flex-direction: column;
-}
-
 .link {
   display: inline-block;
   position: relative;
@@ -41,12 +36,6 @@
   margin-bottom: 1vh;
 }
 
-.footer {
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-  font-size: 1.5em;
-  }
-
 .imprint {
   list-style: none;
   padding: 0.5rem;
@@ -56,11 +45,6 @@
 }
 
 @media only screen and (min-width: 992px) {
-
-  .footer {
-    margin-top: 5vh;
-    font-size: 1.6em;
-  }
 
   .container {
     padding: 0 4rem;
