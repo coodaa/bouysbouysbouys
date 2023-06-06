@@ -1,0 +1,57 @@
+.char {
+  display: inline-block;
+  font-size: calc(2vw + 4vh + 2vmin);
+  text-transform: uppercase;
+}
+
+.down-up-text {
+  clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
+  line-height: 2.5rem;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.intro {
+  height: 100vh;
+}
+
+.intro video {
+  height : 100%;
+  width : 100%;
+  object-fit: cover;
+}
+
+.intro h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  text-transform: uppercase;
+}
+
+.section {
+  height: 80vh;
+}
+
+.section p {
+  margin: auto ;
+  padding-top: 10vh;
+  width: 97%;
+  text-align: left;
+  font-size: 1.5rem;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (min-width: 992px) {
+
+  .char {
+    margin-top: 4vh;
+  }
+
+  .section {
+    height: 30vh;
+  }
+
+}

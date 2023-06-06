@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/Index.module.scss";
+import styles from "../styles/Index.module.css";
 import { useEffect, useState, useRef, useMemo } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -137,22 +137,12 @@ export default function Home() {
             src={"/videoBG.mp4"}
           ></video>
         </div>
-        {/* <div className={styles.layout}>
-          <div className={styles.char}>
-            <p className={styles["down-up-text"]} ref={upTextRef3}>
-              florian
-            </p>
-            <p className={styles["down-up-text"]} ref={upTextRef4}>
-              schneider
-            </p>
-          </div>
-        </div> */}
         <section className={styles.section}>
           <p>
-            PASSIONATE {"\n"}ABOUT WEB TECHNOLOGIES. I LOVE WORKING AT THE
+            PASSIONATE ABOUT WEB TECHNOLOGIES. I LOVE WORKING AT THE
             INTERSECTION OF CREATIVITY AND USER FRIENDLY INTERFACES. I CREATE
-            MEMORABLE WEB EXPERIENCES. WHEN I&quot;M NOT BUILDING OR EXPLORING
-            NEW WEB EXPERIENCES, I&quot;M PROBABLY FISHING AT A LAKE
+            MEMORABLE WEB EXPERIENCES. WHEN I'M NOT BUILDING OR EXPLORING NEW
+            WEB EXPERIENCES, I'M PROBABLY FISHING AT A LAKE
           </p>
         </section>
       </main>
