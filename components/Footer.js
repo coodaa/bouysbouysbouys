@@ -30,13 +30,17 @@ export default function Footer() {
             </Link>
           </li>
         </ul>
-        <ul className={styles.commalist}>
-          <li className={styles.myself}>
-            <Link className={styles.link} href="/legal">
-              Legal Notice{" "}
-            </Link>
-            <a>2022</a>
-          </li>
+        <ul className={styles.commalistfirstchild}>
+          <div className={styles.myself}>
+            <li>
+              <Link href="/legal" legacyBehavior>
+                <a className={styles.link}>Legal Notice</a>
+              </Link>
+            </li>
+            <li>
+              <a>2023</a>
+            </li>
+          </div>
         </ul>
       </div>
     </footer>
