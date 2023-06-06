@@ -1,23 +1,28 @@
-.work {
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
   display: flex;
-  place-content: center;
-  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.my-text {
+.main {
+  padding: 5rem 0;
+  flex: 1;
   display: flex;
-  justify-content: space-between;
-  font-size: 6rem;
-  text-transform: uppercase;
-  clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
-  line-height: 5.9rem;
-  font-kerning: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.title {
+  margin: 0;
+  text-align: center;
+  line-height: 1.15;
+  font-size: 4rem;
 }
 
 .char {
-  transform: translateY(115px);
-  transition-property: transform;
-  transition-duration: 0.5;
   display: inline-block;
 }
