@@ -15,18 +15,42 @@ const VideoComponents = () => {
 
     videoRef.current.currentTime = 0;
 
-    gsap.from([textRef1.current, textRef2.current, textRef3.current], {
-      opacity: 0,
-      scale: 0,
-      duration: 1,
-      stagger: 0.5,
-      ease: "back.out(1.7)",
-      scrollTrigger: {
-        trigger: IntroVideoRef.current,
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
-      },
+    const textAnimations = [
+      { ref: textRef1, start: "top 30%", end: "top 10%" },
+      { ref: textRef2, start: "top 60%", end: "top 40%" },
+      { ref: textRef3, start: "top 90%", end: "top 70%" },
+    ];
+
+    textAnimations.forEach(({ ref, start, end }) => {
+      gsap.fromTo(
+        ref.current,
+        { opacity: 0, scale: 0 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: IntroVideoRef.current,
+            start,
+            end,
+            scrub: true,
+          },
+        }
+      );
+
+      gsap.to(ref.current, {
+        opacity: 0,
+        scale: 0,
+        duration: 1,
+        ease: "back.in(1.7)",
+        scrollTrigger: {
+          trigger: IntroVideoRef.current,
+          start: end,
+          end: start,
+          scrub: true,
+        },
+      });
     });
 
     ScrollTrigger.create({
