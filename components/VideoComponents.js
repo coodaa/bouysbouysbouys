@@ -15,18 +15,22 @@ const VideoComponents = () => {
 
     videoRef.current.currentTime = 0;
 
-    gsap.from([textRef1.current, textRef2.current, textRef3.current], {
-      opacity: 0,
-      scale: 0,
-      duration: 1,
-      stagger: 0.5,
-      ease: "back.out(1.7)",
-      scrollTrigger: {
-        trigger: IntroVideoRef.current,
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
-      },
+    // Für jedes Textelement erstellen wir eine separate Animation und einen ScrollTrigger
+    const textElements = [textRef1, textRef2, textRef3];
+
+    textElements.forEach((textRef, index) => {
+      gsap.from(textRef.current, {
+        opacity: 0,
+        scale: 0,
+        duration: 1,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: `${index * 33.33}% center`, // Positioniert Startpunkte gleichmäßig
+          end: `${(index + 1) * 33.33}% center`, // Positioniert Endpunkte gleichmäßig
+          scrub: true,
+        },
+      });
     });
 
     ScrollTrigger.create({
