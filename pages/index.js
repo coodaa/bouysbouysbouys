@@ -4,7 +4,6 @@ import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
 import SplitTextToChars from "../components/SplitTextToChars.js";
 import VideoComponents from "../components/VideoComponents.js";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Home() {
   //split chars
@@ -33,22 +32,6 @@ export default function Home() {
     });
   }, []);
 
-  const videoRef = useRef(null);
-
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.to(videoRef.current, {
-      height: "100vh",
-      scrollTrigger: {
-        trigger: videoRef.current,
-        start: "top center",
-        end: "bottom bottom",
-        scrub: true,
-      },
-    });
-  }, []);
-
   //end split chars
 
   return (
@@ -69,18 +52,16 @@ export default function Home() {
           </p>
         </div>
 
-        <div ref={videoRef}>
-          <VideoComponents />
-        </div>
+        <VideoComponents />
 
-        {/* <section className={styles.section}>
+        <section className={styles.section}>
           <p>
             PASSIONATE ABOUT WEB TECHNOLOGIES. I LOVE WORKING AT THE
             INTERSECTION OF CREATIVITY AND USER FRIENDLY INTERFACES. I CREATE
             MEMORABLE WEB EXPERIENCES. WHEN I'M NOT BUILDING OR EXPLORING NEW
             WEB EXPERIENCES, I'M PROBABLY FISHING AT A LAKE
           </p>
-        </section> */}
+        </section>
       </main>
     </div>
   );
