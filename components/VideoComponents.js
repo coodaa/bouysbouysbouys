@@ -16,38 +16,21 @@ const VideoComponents = () => {
     videoRef.current.currentTime = 0;
 
     const textAnimations = [
-      { ref: textRef1, start: "top 30%", end: "top 10%" },
-      { ref: textRef2, start: "top 60%", end: "top 40%" },
-      { ref: textRef3, start: "top 90%", end: "top 70%" },
+      { ref: textRef1, start: "top 30%", end: "top 20%" },
+      { ref: textRef2, start: "top 50%", end: "top 40%" },
+      { ref: textRef3, start: "top 70%", end: "top 60%" },
     ];
 
     textAnimations.forEach(({ ref, start, end }) => {
-      gsap.fromTo(
-        ref.current,
-        { opacity: 0, scale: 0 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 1,
-          ease: "back.out(1.7)",
-          scrollTrigger: {
-            trigger: IntroVideoRef.current,
-            start,
-            end,
-            scrub: true,
-          },
-        }
-      );
-
-      gsap.to(ref.current, {
+      gsap.from(ref.current, {
         opacity: 0,
         scale: 0,
         duration: 1,
-        ease: "back.in(1.7)",
+        ease: "back.out(1.7)",
         scrollTrigger: {
           trigger: IntroVideoRef.current,
-          start: end,
-          end: start,
+          start,
+          end,
           scrub: true,
         },
       });
@@ -77,13 +60,13 @@ const VideoComponents = () => {
   return (
     <div ref={IntroVideoRef} className={styles.intro}>
       <p ref={textRef1} className={styles.text}>
-        Great Developer 1
+        HIRE ME
       </p>
-      <p ref={textRef2} className={styles.text}>
-        Great Developer 2
-      </p>
+      {/* <p ref={textRef2} className={styles.text}>
+        Developer
+      </p> */}
       <p ref={textRef3} className={styles.text}>
-        Great Developer 3
+        Or me!
       </p>
       <video
         className={styles.video}
