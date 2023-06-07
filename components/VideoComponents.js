@@ -53,13 +53,13 @@ const VideoComponents = () => {
   return (
     <div ref={IntroVideoRef} className={styles.intro}>
       <p ref={textRef1} className={styles.text}>
-        Great Developer 1
+        BLOOB{" "}
       </p>
       <p ref={textRef2} className={styles.text}>
-        Great Developer 2
+        BLOOB{" "}
       </p>
       <p ref={textRef3} className={styles.text}>
-        Great Developer 3
+        BLOOB{" "}
       </p>
       <video
         className={styles.video}
