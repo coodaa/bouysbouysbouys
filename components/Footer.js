@@ -7,8 +7,8 @@ export default function Footer() {
       <div className={styles.row}>
         <ul className={styles.commalist}>
           <li className={styles.myself}>
-            <a>Florian Schneider</a>
-            <a>Creative Developer</a>
+            <a>bouysbouysbouys</a>
+            <a>Creative Development</a>
           </li>
         </ul>
         <ul className={styles.commalist}>

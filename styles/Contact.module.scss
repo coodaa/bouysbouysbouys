@@ -3,7 +3,7 @@
 }
 
 .wheel {
-  top: 20vh;
+  top: 18vh;
   position: absolute;
 }
 
@@ -17,18 +17,32 @@
   position: relative;
   mix-blend-mode: difference;
   color: white;
-  top: 20vh;
+  top: 25vh;
   clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
-  line-height: 7vw;
+  line-height: 7.5vw;
   margin-bottom: -1vh;
   text-transform: uppercase;
-  font-size: 6.1vw;
+  font-size: 1.5rem;
 }
 
-@media only screen and (min-width: 820px) {
+//iphone landscape
+@media only screen and (max-width: 896px) and (orientation: landscape) {
   .main {
-    min-height: 30vh;
+    margin-top: 19vh;
+  }
+
+  .text {
+    top: 40vh;
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .main {
     margin-top: 10vh;
+  }
+  .text {
+    font-size: 3.4rem;
   }
 }
 
@@ -64,10 +78,9 @@
 }
 
 
-
 @media only screen and (min-width: 992px) {
   .main {
-    min-height: 140vh;
+    min-height: 120vh;
     margin-top: 10vh;
   }
 
@@ -84,4 +97,18 @@
     margin-left: 10%;
     top: 25vh;
   }
+}
+
+@media only screen and (min-width: 1700px) {
+
+  .main {
+    min-height: 130vh;
+  }
+
+  .text {
+    line-height: 7rem;
+    font-size: 6rem;
+    top: 46vh;
+  }
+
 }
