@@ -1,7 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Index.module.css";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SplitTextToChars from "../components/SplitTextToChars.js";
 import VideoComponents from "../components/VideoComponents.js";
 
@@ -10,7 +11,9 @@ export default function Home() {
   const upTextRef = useRef(null);
   const upTextRef2 = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     const animateText = (ref, settings) => {
       if (!ref.current) return;
       const chars = SplitTextToChars(ref.current);
@@ -30,6 +33,27 @@ export default function Home() {
       y: +90,
       stagger: 0.09,
     });
+
+    // Adjust size of the video container and arrow on scroll
+    gsap.to(styles.intro, {
+      scrollTrigger: {
+        trigger: styles.intro,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+      },
+      width: "100%",
+    });
+
+    gsap.to(styles.arrow, {
+      scrollTrigger: {
+        trigger: styles.intro,
+        start: "top center",
+        end: "bottom top",
+        scrub: true,
+      },
+      opacity: 0,
+    });
   }, []);
 
   //end split chars
@@ -44,15 +68,21 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.char}>
-          <p className={styles["down-up-text"]} ref={upTextRef}>
+          <p className={styles.textUp} ref={upTextRef}>
             creative
           </p>
-          <p className={styles["down-up-text"]} ref={upTextRef2}>
+          <p className={styles.textUp} ref={upTextRef2}>
             developer
           </p>
         </div>
 
-        <VideoComponents />
+        <div className={styles.flexContainer}>
+          <VideoComponents />
+
+          <div className={styles.arrow}>
+            <span>↓</span>
+          </div>
+        </div>
 
         <section className={styles.section}>
           <p>

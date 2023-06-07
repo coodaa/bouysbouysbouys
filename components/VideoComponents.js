@@ -38,6 +38,7 @@ const VideoComponents = () => {
       <video
         className={styles.video}
         autoPlay={true}
+        muted
         id="video"
         ref={videoRef}
         src={"/videoBG.mp4"}

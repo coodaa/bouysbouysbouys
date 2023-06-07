@@ -1,10 +1,14 @@
+.main {
+  margin-top: 5vh;
+}
+
 .char {
   display: inline-block;
   font-size: calc(2vw + 4vh + 2vmin);
   text-transform: uppercase;
 }
 
-.down-up-text {
+.textUp {
   clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
   line-height: 2.5rem;
   margin-top: 2vh;
@@ -24,6 +28,36 @@
   overflow-wrap: break-word;
 }
 
+.flexContainer {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 3rem; /* adjust size as needed */
+  color: #ffffff; /* adjust color as needed */
+  opacity: 1;
+  transition: opacity 1s ease;
+  margin-left: 2rem; /* adjust as needed */
+}
+
+
+/* tablet */
+
+
+@media only screen and (min-width: 600px) {
+  .textUp {
+    line-height: 3.5rem;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .textUp {
+    line-height: 3.5rem;
+  }
+}
+
+/* desktop */
 @media only screen and (min-width: 992px) {
 
   .char {
@@ -34,14 +68,14 @@
     height: 30vh;
   }
 
-  .down-up-text {
+  .textUp {
     line-height: 4.5rem;
   }
 }
 
 @media only screen and (min-width: 1700px) {
 
-  .down-up-text {
+  .textUp {
     line-height: 5.9rem;
   }
 
