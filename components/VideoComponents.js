@@ -6,31 +6,31 @@ import styles from "../styles/VideoComponent.module.css";
 const VideoComponents = () => {
   const IntroVideoRef = useRef(null);
   const videoRef = useRef(null);
-  const textRef1 = useRef(null);
-  const textRef2 = useRef(null);
-  const textRef3 = useRef(null);
+  const textRef = useRef(null);
+
+  const textList = ["BLOOB1", "BLOOB2", "BLOOB3"]; // Textinhalte
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     videoRef.current.currentTime = 0;
 
-    // Für jedes Textelement erstellen wir eine separate Animation und einen ScrollTrigger
-    const textElements = [textRef1, textRef2, textRef3];
-
-    textElements.forEach((textRef, index) => {
-      gsap.from(textRef.current, {
-        opacity: 0,
-        scale: 0,
-        duration: 1,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: textRef.current,
-          start: `${index * 33.33}% center`, // Positioniert Startpunkte gleichmäßig
-          end: `${(index + 1) * 33.33}% center`, // Positioniert Endpunkte gleichmäßig
-          scrub: true,
+    gsap.from(textRef.current, {
+      opacity: 0,
+      scale: 0,
+      duration: 1,
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: IntroVideoRef.current,
+        start: "top center",
+        end: () => "+=" + window.innerHeight * textList.length, // Verlängern Sie den ScrollTrigger
+        scrub: true,
+        onUpdate: (self) => {
+          // Ändern Sie den Textinhalt basierend auf dem Scroll-Fortschritt
+          const index = Math.floor(self.progress * textList.length);
+          textRef.current.textContent = textList[index] || "";
         },
-      });
+      },
     });
 
     ScrollTrigger.create({
@@ -52,17 +52,11 @@ const VideoComponents = () => {
         }
       },
     });
-  }, [IntroVideoRef, videoRef, textRef1, textRef2, textRef3]);
+  }, [IntroVideoRef, videoRef, textRef, textList]);
 
   return (
     <div ref={IntroVideoRef} className={styles.intro}>
-      <p ref={textRef1} className={styles.text}>
-        BLOOB{" "}
-      </p>
-      <p ref={textRef2} className={styles.text}>
-        BLOOB{" "}
-      </p>
-      <p ref={textRef3} className={styles.text}>
+      <p ref={textRef} className={styles.text}>
         BLOOB{" "}
       </p>
       <video
