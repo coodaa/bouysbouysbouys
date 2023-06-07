@@ -2,9 +2,9 @@ import Head from "next/head";
 import styles from "../styles/Index.module.css";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SplitTextToChars from "../components/SplitTextToChars.js";
 import VideoComponents from "../components/VideoComponents.js";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Home() {
   //split chars
@@ -12,8 +12,6 @@ export default function Home() {
   const upTextRef2 = useRef(null);
 
   useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const animateText = (ref, settings) => {
       if (!ref.current) return;
       const chars = SplitTextToChars(ref.current);
@@ -33,26 +31,21 @@ export default function Home() {
       y: +90,
       stagger: 0.09,
     });
+  }, []);
 
-    // Adjust size of the video container and arrow on scroll
-    gsap.to(styles.intro, {
+  const videoRef = useRef(null);
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(videoRef.current, {
+      height: "100vh",
       scrollTrigger: {
-        trigger: styles.intro,
-        start: "top top",
+        trigger: videoRef.current,
+        start: "top center",
         end: "bottom bottom",
         scrub: true,
       },
-      width: "100%",
-    });
-
-    gsap.to(styles.arrow, {
-      scrollTrigger: {
-        trigger: styles.intro,
-        start: "top center",
-        end: "bottom top",
-        scrub: true,
-      },
-      opacity: 0,
     });
   }, []);
 
@@ -76,22 +69,18 @@ export default function Home() {
           </p>
         </div>
 
-        <div className={styles.flexContainer}>
+        <div ref={videoRef}>
           <VideoComponents />
-
-          <div className={styles.arrow}>
-            <span>↓</span>
-          </div>
         </div>
 
-        <section className={styles.section}>
+        {/* <section className={styles.section}>
           <p>
             PASSIONATE ABOUT WEB TECHNOLOGIES. I LOVE WORKING AT THE
             INTERSECTION OF CREATIVITY AND USER FRIENDLY INTERFACES. I CREATE
             MEMORABLE WEB EXPERIENCES. WHEN I'M NOT BUILDING OR EXPLORING NEW
             WEB EXPERIENCES, I'M PROBABLY FISHING AT A LAKE
           </p>
-        </section>
+        </section> */}
       </main>
     </div>
   );
