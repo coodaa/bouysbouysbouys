@@ -6,7 +6,7 @@ import styles from "../styles/VideoComponent.module.css";
 const VideoComponents = () => {
   const IntroVideoRef = useRef(null);
   const videoRef = useRef(null);
-  const textRef = useRef(null);
+  const textRefs = useRef([]);
 
   const textList = ["BLOOB1", "BLOOB2", "BLOOB3"]; // Textinhalte
 
@@ -15,22 +15,26 @@ const VideoComponents = () => {
 
     videoRef.current.currentTime = 0;
 
-    gsap.from(textRef.current, {
-      opacity: 0,
-      scale: 0,
-      duration: 1,
-      ease: "back.out(1.7)",
-      scrollTrigger: {
-        trigger: IntroVideoRef.current,
-        start: "top center",
-        end: () => "+=" + window.innerHeight * textList.length, // Verlängern Sie den ScrollTrigger
-        scrub: true,
-        onUpdate: (self) => {
-          // Ändern Sie den Textinhalt basierend auf dem Scroll-Fortschritt
-          const index = Math.floor(self.progress * textList.length);
-          textRef.current.textContent = textList[index] || "";
+    textList.forEach((_, index) => {
+      gsap.fromTo(
+        textRefs.current[index],
+        {
+          opacity: 0,
+          scale: 0,
         },
-      },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: textRefs.current[index],
+            start: "top center",
+            end: "bottom center",
+            scrub: true,
+          },
+        }
+      );
     });
 
     ScrollTrigger.create({
@@ -52,13 +56,19 @@ const VideoComponents = () => {
         }
       },
     });
-  }, [IntroVideoRef, videoRef, textRef, textList]);
+  }, [IntroVideoRef, videoRef, textRefs, textList]);
 
   return (
     <div ref={IntroVideoRef} className={styles.intro}>
-      <p ref={textRef} className={styles.text}>
-        BLOOB{" "}
-      </p>
+      {textList.map((text, index) => (
+        <p
+          ref={(el) => (textRefs.current[index] = el)}
+          key={index}
+          className={styles.text}
+        >
+          {text}
+        </p>
+      ))}
       <video
         className={styles.video}
         autoPlay={true}

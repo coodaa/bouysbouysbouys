@@ -1,42 +1,73 @@
 import { useEffect, useRef } from "react";
-import styles from "../styles/Work.module.css";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import styles from "../styles/VideoComponent.module.css";
 
-const Work = () => {
-  const textRef = useRef();
-  const imageRef = useRef();
+const VideoComponents = () => {
+  const IntroVideoRef = useRef(null);
+  const videoRef = useRef(null);
+  const textRef = useRef(null);
+
+  const textList = ["BLOOB1", "BLOOB2", "BLOOB3"]; // Textinhalte
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (
-        window.scrollY + window.innerHeight >=
-        imageRef.current.scrollHeight
-      ) {
-        textRef.current.style.position = "static";
-      } else {
-        textRef.current.style.position = "sticky";
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    gsap.registerPlugin(ScrollTrigger);
+
+    videoRef.current.currentTime = 0;
+
+    gsap.from(textRef.current, {
+      opacity: 0,
+      scale: 0,
+      duration: 1,
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: IntroVideoRef.current,
+        start: "top center",
+        end: () => "+=" + window.innerHeight * textList.length, // Verlängern Sie den ScrollTrigger
+        scrub: true,
+        onUpdate: (self) => {
+          // Ändern Sie den Textinhalt basierend auf dem Scroll-Fortschritt
+          const index = Math.floor(self.progress * textList.length);
+          textRef.current.textContent = textList[index] || "";
+        },
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: IntroVideoRef.current,
+      scrub: true,
+      pin: IntroVideoRef.current,
+      delay: 5.0,
+      start: "center center",
+      end: "9000",
+      onUpdate: function (self) {
+        if (videoRef.current) {
+          const scrollPos = self.progress;
+          const videoDuration = videoRef.current.duration;
+          const videoCurrentTime = videoDuration * scrollPos;
+
+          if (videoCurrentTime) {
+            videoRef.current.currentTime = videoCurrentTime;
+          }
+        }
+      },
+    });
+  }, [IntroVideoRef, videoRef, textRef, textList]);
 
   return (
-    <>
-      <nav>{/* Hier Ihre Navbar */}</nav>
-      <div className={styles.container}>
-        <div ref={textRef} className={`${styles.textSection} sticky-text`}>
-          Gropiusbau
-        </div>
-        <div ref={imageRef} className={styles.imageSection}>
-          <img src="/img/gas.webp" alt="Bildbeschreibung" />
-          <img src="/img/gas2.webp" alt="Bildbeschreibung" />
-          <img src="/img/sch.webp" alt="Last Image" />
-        </div>
-      </div>
-    </>
+    <div ref={IntroVideoRef} className={styles.intro}>
+      <p ref={textRef} className={styles.text}>
+        BLOOB{" "}
+      </p>
+      <video
+        className={styles.video}
+        autoPlay={true}
+        id="video"
+        ref={videoRef}
+        src={"/videoBG.mp4"}
+      ></video>
+    </div>
   );
 };
 
-export default Work;
+export default VideoComponents;
