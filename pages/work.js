@@ -1,54 +1,41 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import styles from "../styles/Work.module.css";
 
 const Work = () => {
   const textRef = useRef();
   const imageRef = useRef();
-  const [lastImageVisible, setLastImageVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        setLastImageVisible(true);
+    const handleScroll = () => {
+      if (
+        window.scrollY + window.innerHeight >=
+        imageRef.current.scrollHeight
+      ) {
+        textRef.current.style.position = "static";
       } else {
-        setLastImageVisible(false);
+        textRef.current.style.position = "sticky";
       }
-    });
-
-    if (imageRef.current) {
-      observer.observe(imageRef.current);
-    }
-
+    };
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      if (imageRef.current) {
-        observer.unobserve(imageRef.current);
-      }
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  useEffect(() => {
-    if (lastImageVisible) {
-      if (textRef.current) {
-        textRef.current.style.overflow = "auto";
-      }
-    } else {
-      if (textRef.current) {
-        textRef.current.style.overflow = "hidden";
-      }
-    }
-  }, [lastImageVisible]);
-
   return (
-    <div className={styles.container}>
-      <div className={styles.textSection}>
-        <div className={styles.stickyText}>Gropiusbau</div>
+    <>
+      <nav>{/* Hier Ihre Navbar */}</nav>
+      <div className={styles.container}>
+        <div ref={textRef} className={`${styles.textSection} sticky-text`}>
+          Gropiusbau
+        </div>
+        <div ref={imageRef} className={styles.imageSection}>
+          <img src="/img/gas.webp" alt="Bildbeschreibung" />
+          <img src="/img/gas2.webp" alt="Bildbeschreibung" />
+          <img src="/img/sch.webp" alt="Last Image" />
+        </div>
       </div>
-      <div className={styles.imageSection}>
-        <img src="/img/gas.webp" alt="Bildbeschreibung" />
-        <img src="/img/gas2.webp" alt="Bildbeschreibung" />
-        <img ref={imageRef} src="/img/sch.webp" alt="Last Image" />
-      </div>
-    </div>
+    </>
   );
 };
 

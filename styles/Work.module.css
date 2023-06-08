@@ -1,16 +1,14 @@
 .container {
   display: flex;
   justify-content: space-between;
-  min-height: 100vh;
-  overflow-y: auto;
+  height: 100vh;
+  overflow-y: scroll;
+  margin-top: 5vh;
+
 }
 
 .textSection {
   width: 50%;
-  overflow-y: scroll;
-}
-
-.stickyText {
   position: sticky;
   top: 0;
   font-size: 2rem;
@@ -18,5 +16,4 @@
 
 .imageSection {
   width: 50%;
-  overflow-y: scroll;
 }
