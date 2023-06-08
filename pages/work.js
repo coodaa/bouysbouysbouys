@@ -1,88 +1,55 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { useEffect, useRef, useState } from "react";
 import styles from "../styles/Work.module.css";
 
-export default function Work() {
-  const titleRef = useRef([]);
+const Work = () => {
+  const textRef = useRef();
+  const imageRef = useRef();
+  const [lastImageVisible, setLastImageVisible] = useState(false);
 
   useEffect(() => {
-    titleRef.current = titleRef.current.slice(0, "creativedeveloper".length);
-
-    gsap.fromTo(
-      titleRef.current,
-      {
-        y: 100,
-        opacity: 0,
-      },
-      {
-        duration: 0.8,
-        delay: 0.5,
-        y: 0,
-        opacity: 1,
-        stagger: 0.05,
-        ease: "power3.out",
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setLastImageVisible(true);
+      } else {
+        setLastImageVisible(false);
       }
-    );
+    });
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    return () => {
+      if (imageRef.current) {
+        observer.unobserve(imageRef.current);
+      }
+    };
   }, []);
 
-  const addToRefs = (el) => {
-    if (el && !titleRef.current.includes(el)) {
-      titleRef.current.push(el);
+  useEffect(() => {
+    if (lastImageVisible) {
+      if (textRef.current) {
+        textRef.current.style.overflow = "auto";
+      }
+    } else {
+      if (textRef.current) {
+        textRef.current.style.overflow = "hidden";
+      }
     }
-  };
+  }, [lastImageVisible]);
 
   return (
     <div className={styles.container}>
-      <main className={styles.main}>
-        <div className={styles.title}>
-          <div>
-            {"Creative".split("").map((char, i) => (
-              <span
-                key={i}
-                className={styles.char}
-                ref={addToRefs}
-                style={{ opacity: 0 }}
-              >
-                {char}
-              </span>
-            ))}
-          </div>
-          <div>
-            {"Developer".split("").map((char, i) => (
-              <span
-                key={i}
-                className={styles.char}
-                ref={addToRefs}
-                style={{ opacity: 0 }}
-              >
-                {char}
-              </span>
-            ))}
-          </div>
-        </div>
-      </main>
+      <div className={styles.textSection}>
+        <div className={styles.stickyText}>Gropiusbau</div>
+      </div>
+      <div className={styles.imageSection}>
+        <img src="/img/gas.webp" alt="Bildbeschreibung" />
+        <img src="/img/gas2.webp" alt="Bildbeschreibung" />
+        <img ref={imageRef} src="/img/sch.webp" alt="Last Image" />
+      </div>
     </div>
   );
-}
+};
 
-// import styles from "../styles/Work.module.css";
-// import Head from "next/head";
-// import TextAnimation from "../components/TextAnimation.js";
-
-// export default function Florian() {
-//   return (
-//     <div>
-//       <Head>
-//         <title>Florian</title>
-//       </Head>
-//       <div className={styles.container}>
-//         <main className={styles.main}>
-//           <div className={styles.title}>
-//             <TextAnimation text="creative" />
-//             <TextAnimation text="developer" />
-//           </div>
-//         </main>
-//       </div>
-//     </div>
-//   );
-// }
+export default Work;

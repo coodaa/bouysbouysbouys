@@ -86,7 +86,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import styles from "../styles/Work.module.css";
+import styles from "../styles/About.module.css";
 
 export default function About() {
   const titleRef = useRef([]);
