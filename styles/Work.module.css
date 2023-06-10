@@ -6,10 +6,36 @@
   margin-top: 5vh;
 }
 
+.headingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto; /* Zentriert die Box horizontal */
+}
+
+.headingContainer h1 {
+  font-size: 20rem;
+  width: fit-content; /* Setzt die Breite auf die Breite des Textinhalts */
+}
+
+.headingContainer p {
+  max-width: 100%; /* Begrenzt die Breite auf die des Elternelements */
+}
+
+
 .projectSection {
   display: flex;
   flex-direction: row;
   height: 100vh;
+}
+
+.projectNewSection {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  margin-top: 10vh;
 }
 
 .textSection {
@@ -25,11 +51,18 @@
 .imageSection {
   flex: 1;
   overflow: auto;
+  margin-top: 2vh;
+
+}
+
+.imageSection > div {
+  margin-bottom: 5vh; /* Der Leerraum entspricht 5% der Höhe des Viewports */
 }
 
 /* Mobile view */
 @media (max-width: 600px) {
-  .projectSection {
+  .projectSection,
+  .projectNewSection {
       flex-direction: column;
       height: auto;
   }
@@ -40,5 +73,9 @@
 
   .sticky {
       position: relative;
+  }
+
+  .headingContainer h1 {
+    font-size: 4rem;  /* Ändert die Schriftgröße im mobilen Modus */
   }
 }
