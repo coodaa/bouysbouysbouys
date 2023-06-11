@@ -16,14 +16,13 @@
 }
 
 .headingContainer h1 {
-  font-size: 20rem;
+  font-size: calc(7vw + 10rem); /* Dynamische Schriftgröße basierend auf der Breite des Viewports */
   width: fit-content; /* Setzt die Breite auf die Breite des Textinhalts */
 }
 
 .headingContainer p {
   max-width: 100%; /* Begrenzt die Breite auf die des Elternelements */
 }
-
 
 .projectSection {
   display: flex;
@@ -52,7 +51,6 @@
   flex: 1;
   overflow: auto;
   margin-top: 2vh;
-
 }
 
 .imageSection > div {

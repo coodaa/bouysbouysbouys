@@ -76,7 +76,7 @@ const Work = () => {
     <div className={styles.workPage}>
       <div className={styles.headingContainer}>
         <h1>
-          {"Projects".split("").map((char, i) => (
+          {"PROJEKTS".split("").map((char, i) => (
             <span
               key={i}
               className={styles.char}
