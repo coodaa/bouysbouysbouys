@@ -2,9 +2,10 @@ import { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import SplitTextToChars from "../components/SplitTextToChars";
 
-const useAnimatedText = (settings1, settings2) => {
+const useAnimatedText = (settings1, settings2, settings3) => {
   const textRef1 = useRef(null);
   const textRef2 = useRef(null);
+  const textRef3 = useRef(null);
 
   useLayoutEffect(() => {
     const animateText = (ref, settings) => {
@@ -16,9 +17,10 @@ const useAnimatedText = (settings1, settings2) => {
 
     animateText(textRef1, settings1);
     animateText(textRef2, settings2);
+    animateText(textRef3, settings3);
   }, []);
 
-  return [textRef1, textRef2];
+  return [textRef1, textRef2, textRef3];
 };
 
 export default useAnimatedText;

@@ -131,7 +131,9 @@
 
 @media only screen and (min-width: 992px) {
   .nav {
+    opacity: 0; /* Die Navbar ist zunächst unsichtbar */
     animation: slideDownFadeIn 0.8s ease-out;
+    animation-delay: 1s; /* Nach 4 Sekunden beginnt die Animation */
     animation-fill-mode: forwards;
     justify-content: space-between;
     margin-top: 5vh;

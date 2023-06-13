@@ -17,12 +17,19 @@ const Work = () => {
     y: 200,
     stagger: 0.09,
   };
-  // const settings2 = {
-  //   duration: 0.8,
-  //   delay: -1.355,
-  //   y: +90,
-  //   stagger: 0.09,
-  // };
+  const settings2 = {
+    duration: 0.8,
+    delay: -1.355,
+    y: +90,
+    stagger: 0.09,
+  };
+  //arrow animation
+  const settings3 = {
+    duration: 0.8,
+    delay: -1.355,
+    y: +90,
+    stagger: 0.09,
+  };
 
   const [titleRef1, titleRef2] = useAnimatedText(settings1, settings1);
 
@@ -71,6 +78,7 @@ const Work = () => {
           </h1>
         </div>
       </main>
+      <div className={styles.arrow}>&#8595;</div>
 
       <div className={styles.projectSection}>
         <div className={styles.textSection}>
