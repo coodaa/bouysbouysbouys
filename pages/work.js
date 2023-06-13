@@ -17,6 +17,12 @@ const Work = () => {
     y: 200,
     stagger: 0.09,
   };
+  // const settings2 = {
+  //   duration: 0.8,
+  //   delay: -1.355,
+  //   y: +90,
+  //   stagger: 0.09,
+  // };
 
   const [titleRef1, titleRef2] = useAnimatedText(settings1, settings1);
 
