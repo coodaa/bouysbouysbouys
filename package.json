@@ -24,6 +24,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-interactive-blob": "^0.0.1",
+    "react-intersection-observer": "^9.4.4",
     "react-konva": "^16.8.6",
     "react-scroll-parallax": "^3.4.2",
     "react-spring": "^9.5.5",

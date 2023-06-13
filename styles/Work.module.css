@@ -47,10 +47,6 @@
   margin-top: 10vh;
 }
 
-.projectSection, .projectNewSection {
-  transition: opacity 1s ease-out;
-}
-
 .textSection {
   flex: 1;
 }
@@ -71,19 +67,6 @@
 .imageSection > div {
   margin-bottom: 5vh; /* Der Leerraum entspricht 5% der Höhe des Viewports */
 }
-
-.hide {
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.show {
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 0.3s;
-}
-
 
 /* Mobile view */
 @media (max-width: 600px) {
