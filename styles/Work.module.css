@@ -12,12 +12,20 @@
   align-items: center;
   text-align: center;
   width: fit-content;
-  margin: 0 auto; /* Zentriert die Box horizontal */
+  margin: 0; /* Zentriert die Box horizontal */
+  line-height: 1.15;
+}
+
+.char {
+  display: inline-block;
+  text-transform: uppercase;
+
 }
 
 .headingContainer h1 {
   font-size: calc(7vw + 10rem); /* Dynamische Schriftgröße basierend auf der Breite des Viewports */
   width: fit-content; /* Setzt die Breite auf die Breite des Textinhalts */
+
 }
 
 .headingContainer p {

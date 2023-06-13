@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
 import styles from "../styles/Work.module.css";
+import useAnimatedText from "../hooks/useAnimatedText";
 
 const Work = () => {
   const imageRef1 = useRef();
@@ -10,7 +11,15 @@ const Work = () => {
   const imageRef4 = useRef();
   const imageRef5 = useRef();
   const imageRef6 = useRef();
-  const titleRef = useRef([]);
+
+  const settings1 = {
+    duration: 0.8,
+    delay: 0.0,
+    y: +90,
+    stagger: 0.09,
+  };
+
+  const [titleRef1, titleRef2] = useAnimatedText(settings1, settings1);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -44,53 +53,18 @@ const Work = () => {
       };
 
       // Activate the parallax effect after a slight delay
-      setTimeout(activateParallax, 100);
+      setTimeout(activateParallax, 200);
     }
-
-    titleRef.current = titleRef.current.slice(0, "Projects".length);
-
-    gsap.fromTo(
-      titleRef.current,
-      {
-        y: -100,
-        opacity: 0,
-      },
-      {
-        duration: 1.8,
-        delay: 0.9,
-        y: 0,
-        opacity: 1,
-        stagger: 0.09,
-        ease: "power3.out",
-      }
-    );
   }, []);
-
-  const addToRefs = (el) => {
-    if (el && !titleRef.current.includes(el)) {
-      titleRef.current.push(el);
-    }
-  };
 
   return (
     <div className={styles.workPage}>
       <div className={styles.headingContainer}>
         <h1>
-          {"PROJEKTS".split("").map((char, i) => (
-            <span
-              key={i}
-              className={styles.char}
-              ref={addToRefs}
-              style={{ opacity: 0 }}
-            >
-              {char}
-            </span>
-          ))}
+          <span className={styles.char} ref={titleRef1}>
+            projects
+          </span>
         </h1>
-        {/* <p>
-          A selected set of projects I've built with individuals and teams. This
-          is a mix of personal, collaborative and client owned projects.
-        </p> */}
       </div>
       <div className={styles.projectSection}>
         <div className={styles.textSection}>
