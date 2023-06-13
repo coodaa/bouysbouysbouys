@@ -11,21 +11,27 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: fit-content;
-  margin: 0; /* Zentriert die Box horizontal */
-  line-height: 1.15;
+  /* width: fit-content; */
+  /* margin: 0; Zentriert die Box horizontal */
+  /* line-height: 1.15; */
+  /* width: 100%; */
+  height: auto;
 }
 
 .char {
   display: inline-block;
   text-transform: uppercase;
+  overflow: visible;
+}
 
+.textUp {
+  clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
+  line-height: 25vh;
 }
 
 .headingContainer h1 {
-  font-size: calc(7vw + 10rem); /* Dynamische Schriftgröße basierend auf der Breite des Viewports */
-  width: fit-content; /* Setzt die Breite auf die Breite des Textinhalts */
-
+  font-size: 15rem;
+  width: 100%;
 }
 
 .headingContainer p {
@@ -79,9 +85,5 @@
 
   .sticky {
       position: relative;
-  }
-
-  .headingContainer h1 {
-    font-size: 4rem;  /* Ändert die Schriftgröße im mobilen Modus */
   }
 }

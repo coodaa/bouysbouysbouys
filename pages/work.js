@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
 import Image from "next/image";
 import styles from "../styles/Work.module.css";
 import useAnimatedText from "../hooks/useAnimatedText";
@@ -15,7 +14,7 @@ const Work = () => {
   const settings1 = {
     duration: 0.8,
     delay: 0.0,
-    y: +90,
+    y: 200,
     stagger: 0.09,
   };
 
@@ -59,13 +58,14 @@ const Work = () => {
 
   return (
     <div className={styles.workPage}>
-      <div className={styles.headingContainer}>
-        <h1>
-          <span className={styles.char} ref={titleRef1}>
+      <main className={styles.headingContainer}>
+        <div className={styles.char}>
+          <h1 className={styles.textUp} ref={titleRef1}>
             projects
-          </span>
-        </h1>
-      </div>
+          </h1>
+        </div>
+      </main>
+
       <div className={styles.projectSection}>
         <div className={styles.textSection}>
           <div className={styles.sticky}>Gropiusbau </div>
