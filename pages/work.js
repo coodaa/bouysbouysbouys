@@ -1,9 +1,16 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "../styles/Work.module.css";
 import useAnimatedText from "../hooks/useAnimatedText";
 
 const Work = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    // Setzt den Zustand auf true, sobald die Komponente gemountet wurde
+    setIsClient(true);
+  }, []);
+
   const imageRef1 = useRef();
   const imageRef2 = useRef();
   const imageRef3 = useRef();
@@ -69,7 +76,7 @@ const Work = () => {
     }
   }, []);
 
-  return (
+  return isClient ? (
     <div className={styles.workPage}>
       <main className={styles.headingContainer}>
         <div className={styles.char}>
@@ -145,7 +152,7 @@ const Work = () => {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default Work;
