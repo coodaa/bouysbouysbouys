@@ -2,8 +2,12 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "../styles/Work.module.css";
 import useAnimatedText from "../hooks/useAnimatedText";
+import useOnScreen from "../hooks/useOnScreen";
 
 const Work = () => {
+  const [ref1, visible1] = useOnScreen({ rootMargin: "-100px" });
+  const [ref2, visible2] = useOnScreen({ rootMargin: "-100px" });
+
   const imageRef1 = useRef();
   const imageRef2 = useRef();
   const imageRef3 = useRef();
@@ -13,10 +17,16 @@ const Work = () => {
 
   const settings1 = {
     duration: 0.8,
-    delay: 0.0,
+    delay: -1,
     y: 200,
     stagger: 0.09,
   };
+  // const settings2 = {
+  //   duration: 0.8,
+  //   delay: -1.355,
+  //   y: +90,
+  //   stagger: 0.09,
+  // };
 
   const [titleRef1, titleRef2] = useAnimatedText(settings1, settings1);
 
@@ -66,9 +76,16 @@ const Work = () => {
         </div>
       </main>
 
-      <div className={styles.projectSection}>
+      <div
+        className={`${styles.projectSection} ${
+          visible1 ? styles.show : styles.hide
+        }`}
+        ref={ref1}
+      >
         <div className={styles.textSection}>
-          <div className={styles.sticky}>Gropiusbau </div>
+          <div className={styles.sticky} ref={titleRef2}>
+            Gropiusbau
+          </div>
         </div>
         <div className={styles.imageSection}>
           <div ref={imageRef1}>
@@ -97,7 +114,12 @@ const Work = () => {
           </div>
         </div>
       </div>
-      <div className={styles.projectNewSection}>
+      <div
+        className={`${styles.projectNewSection} ${
+          visible2 ? styles.show : styles.hide
+        }`}
+        ref={ref2}
+      >
         <div className={styles.textSection}>
           <div className={styles.sticky}>Berliner Festspiele </div>
         </div>
