@@ -79,7 +79,6 @@ const Work = () => {
         </div>
       </main>
       <div className={styles.arrow}>&#8595;</div>
-
       <div className={styles.projectSection}>
         <div className={styles.textSection}>
           <div className={styles.sticky} ref={titleRef2}>
@@ -91,24 +90,27 @@ const Work = () => {
             <Image
               src="/img/gas.webp"
               alt="Beschreibung des Bildes"
-              width={500}
-              height={300}
+              width={800}
+              height={500}
+              layout="responsive"
             />
           </div>
           <div ref={imageRef2}>
             <Image
               src="/img/gas2.webp"
               alt="Beschreibung des Bildes"
-              width={500}
-              height={300}
+              width={800}
+              height={500}
+              layout="responsive"
             />
           </div>
           <div ref={imageRef3}>
             <Image
               src="/img/gas3.webp"
               alt="Beschreibung des Bildes"
-              width={500}
-              height={300}
+              width={800}
+              height={500}
+              layout="responsive"
             />
           </div>
         </div>
@@ -122,24 +124,61 @@ const Work = () => {
             <Image
               src="/img/gas.webp"
               alt="Beschreibung des Bildes"
-              width={500}
-              height={300}
+              width={800}
+              height={500}
+              layout="responsive"
             />
           </div>
           <div ref={imageRef5}>
             <Image
               src="/img/gas2.webp"
               alt="Beschreibung des Bildes"
-              width={500}
-              height={300}
+              width={800}
+              height={500}
+              layout="responsive"
             />
           </div>
           <div ref={imageRef6}>
             <Image
               src="/img/gas3.webp"
               alt="Beschreibung des Bildes"
-              width={500}
-              height={300}
+              width={800}
+              height={500}
+              layout="responsive"
+            />
+          </div>
+        </div>
+      </div>{" "}
+      <div className={styles.projectNewSection}>
+        <div className={styles.textSection}>
+          <div className={styles.sticky}>Volksbühne</div>
+        </div>
+        <div className={styles.imageSection}>
+          <div ref={imageRef4}>
+            <Image
+              src="/img/gas.webp"
+              alt="Beschreibung des Bildes"
+              width={800}
+              height={500}
+              layout="responsive"
+            />
+          </div>
+          <div ref={imageRef5}>
+            <Image
+              src="/img/gas2.webp"
+              alt="Beschreibung des Bildes"
+              width={800}
+              height={500}
+              layout="responsive"
+            />
+          </div>
+          <div ref={imageRef6}>
+            <Image
+              src="/img/gas3.webp"
+              alt="Beschreibung des Bildes"
+              width={800}
+              height={500}
+              layout="responsive"
             />
           </div>
         </div>

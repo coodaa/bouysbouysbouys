@@ -74,18 +74,6 @@
   margin-bottom: 10vh;
 }
 
-.projectSection {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-}
-
-.projectNewSection {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  margin-top: 10vh;
-}
 
 .textSection {
   flex: 1;
@@ -99,13 +87,27 @@
 }
 
 .imageSection {
-  flex: 1;
-  overflow: auto;
+  /* flex: 1; */
   margin-top: 2vh;
 }
 
 .imageSection > div {
   margin-bottom: 5vh; /* Der Leerraum entspricht 5% der Höhe des Viewports */
+}
+
+.imageSection > div > Image {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.projectSection,
+.projectNewSection {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  min-height: 100vh;
+  margin-top: 10vh;
 }
 
 /* Mobile view */

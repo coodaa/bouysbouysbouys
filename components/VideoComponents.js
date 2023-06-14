@@ -29,8 +29,8 @@ const VideoComponents = () => {
           ease: "back.out(1.7)",
           scrollTrigger: {
             trigger: textRefs.current[index],
-            start: "top center",
-            end: "bottom center",
+            start: () => `+=${index * 1000}`, // start dynamically based on the index
+            end: () => `+=${(index + 1) * 1000}`, // end dynamically based on the index
             scrub: true,
           },
         }
