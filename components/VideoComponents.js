@@ -16,25 +16,34 @@ const VideoComponents = () => {
     videoRef.current.currentTime = 0;
 
     textList.forEach((_, index) => {
-      gsap.fromTo(
-        textRefs.current[index],
-        {
-          opacity: 0,
-          scale: 0,
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 1,
-          ease: "back.out(1.7)",
+      gsap
+        .timeline({
           scrollTrigger: {
             trigger: textRefs.current[index],
             start: () => `+=${index * 1000}`, // start dynamically based on the index
             end: () => `+=${(index + 1) * 1000}`, // end dynamically based on the index
             scrub: true,
           },
-        }
-      );
+        })
+        .fromTo(
+          textRefs.current[index],
+          {
+            opacity: 0,
+            scale: 0,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: "back.out(1.7)",
+          }
+        )
+        .to(textRefs.current[index], {
+          opacity: 0,
+          scale: 0,
+          duration: 1,
+          ease: "back.in(1.7)",
+        });
     });
 
     ScrollTrigger.create({
