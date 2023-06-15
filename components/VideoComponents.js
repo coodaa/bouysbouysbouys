@@ -8,7 +8,7 @@ const VideoComponents = () => {
   const videoRef = useRef(null);
   const textRefs = useRef([]);
 
-  const textList = ["BLOOB1", "BLOOB2", "BLOOB3"]; // Textinhalte
+  const textList = ["CREATIVE", "DEVELOPER", "HIRE ME"]; // Textinhalte
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -16,12 +16,19 @@ const VideoComponents = () => {
     videoRef.current.currentTime = 0;
 
     textList.forEach((_, index) => {
+      let factor = index * 1000;
+
+      // Increase the factor between "BLOOB2" and "BLOOB3"
+      if (index === 2) {
+        factor += 1000; // Add additional 1000 units for "BLOOB3"
+      }
+
       gsap
         .timeline({
           scrollTrigger: {
             trigger: textRefs.current[index],
-            start: () => `+=${index * 1000}`, // start dynamically based on the index
-            end: () => `+=${(index + 1) * 1000}`, // end dynamically based on the index
+            start: () => `+=${factor}`, // start dynamically based on the factor
+            end: () => `+=${factor + 1000}`, // end dynamically based on the factor
             scrub: true,
           },
         })
