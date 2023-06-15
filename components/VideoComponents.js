@@ -8,7 +8,7 @@ const VideoComponents = () => {
   const videoRef = useRef(null);
   const textRefs = useRef([]);
 
-  const textList = ["CREATIVE", "DEVELOPER", "HIRE ME"]; // Textinhalte
+  const textList = ["Hi", "this", "is", "my", "Portfolio"]; // Add "BLOOB4" and "BLOOB5"
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -21,6 +21,11 @@ const VideoComponents = () => {
       // Increase the factor between "BLOOB2" and "BLOOB3"
       if (index === 2) {
         factor += 1000; // Add additional 1000 units for "BLOOB3"
+      }
+
+      // Increase the factor between "BLOOB4" and "BLOOB5"
+      if (index === 4) {
+        factor += 1000; // Add additional 1000 units for "BLOOB5"
       }
 
       gsap
@@ -59,7 +64,7 @@ const VideoComponents = () => {
       pin: IntroVideoRef.current,
       delay: 5.0,
       start: "center center",
-      end: "9000",
+      end: "+=11000", // Update the end point as per the added texts
       onUpdate: function (self) {
         if (videoRef.current) {
           const scrollPos = self.progress;
