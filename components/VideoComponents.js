@@ -8,7 +8,7 @@ const VideoComponents = () => {
   const videoRef = useRef(null);
   const textRefs = useRef([]);
 
-  const textList = ["Hi", "this", "is", "my", "Portfolio"]; // Add "BLOOB4" and "BLOOB5"
+  const textList = ["Hi", "this", "is", "my", "Portfolio"];
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -16,24 +16,14 @@ const VideoComponents = () => {
     videoRef.current.currentTime = 0;
 
     textList.forEach((_, index) => {
-      let factor = index * 1000;
-
-      // Increase the factor between "BLOOB2" and "BLOOB3"
-      if (index === 2) {
-        factor += 1000; // Add additional 1000 units for "BLOOB3"
-      }
-
-      // Increase the factor between "BLOOB4" and "BLOOB5"
-      if (index === 4) {
-        factor += 1000; // Add additional 1000 units for "BLOOB5"
-      }
+      let factor = index * 3000; // Increase factor step to 3000
 
       gsap
         .timeline({
           scrollTrigger: {
             trigger: textRefs.current[index],
             start: () => `+=${factor}`, // start dynamically based on the factor
-            end: () => `+=${factor + 1000}`, // end dynamically based on the factor
+            end: () => `+=${factor + 3000}`, // end dynamically based on the factor plus the duration of animation
             scrub: true,
           },
         })
@@ -64,7 +54,7 @@ const VideoComponents = () => {
       pin: IntroVideoRef.current,
       delay: 5.0,
       start: "center center",
-      end: "+=11000", // Update the end point as per the added texts
+      end: () => `+=${textList.length * 3000 + 1000}`, // Update the end point as per the number of texts
       onUpdate: function (self) {
         if (videoRef.current) {
           const scrollPos = self.progress;
