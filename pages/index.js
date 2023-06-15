@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Index.module.css";
 import useAnimatedText from "../hooks/useAnimatedText";
 import VideoComponents from "../components/VideoComponents.js";
+// import SquareComponents from "../components/SquareComponents.js";
 
 export default function Home() {
   const settings1 = {
@@ -38,6 +39,7 @@ export default function Home() {
         </div>
 
         <VideoComponents />
+        {/* <SquareComponents /> */}
 
         <section className={styles.section}>
           <p>
