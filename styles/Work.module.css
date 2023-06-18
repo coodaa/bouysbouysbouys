@@ -114,24 +114,19 @@
   height: auto;
 }
 
-.projectSection,
-.projectNewSection {
+.projectSection {
   display: flex;
   flex-direction: column;
   height: auto;
   min-height: 100vh;
   margin-top: 10vh;
-}
-
-.visible {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.hidden {
   opacity: 0;
+  transition: opacity 2s ease-in-out;
 }
 
+.projectSection.show {
+  opacity: 1;
+}
 
 @media only screen and (min-width: 600px) {
 
@@ -153,8 +148,7 @@
     margin-left: 15vw;
   }
 
-  .projectSection,
-  .projectNewSection {
+  .projectSection {
     flex-direction: row;
   }
 

@@ -119,29 +119,14 @@ const Work = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const [isVisible, setIsVisible] = useState(false);
+  const [showSection, setShowSection] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      });
-    });
+    const timer = setTimeout(() => {
+      setShowSection(true);
+    }, 3000);
 
-    const projectSection = document.querySelector(".projectSection");
-
-    if (projectSection) {
-      observer.observe(projectSection);
-    }
-
-    return () => {
-      if (projectSection) {
-        observer.unobserve(projectSection);
-      }
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -168,9 +153,7 @@ const Work = () => {
         <div className={styles.arrow}>&#8595;</div>
       </div>
       <div
-        className={`${styles.projectSection} ${
-          isVisible ? styles.visible : styles.hidden
-        }`}
+        className={`${styles.projectSection} ${showSection ? styles.show : ""}`}
       >
         <div className={styles.textSection}>
           <div className={styles.sticky} ref={titleRef2}>
@@ -207,7 +190,7 @@ const Work = () => {
           </div>
         </div>
       </div>
-      <div className={styles.projectNewSection}>
+      <div className={styles.projectSection}>
         <div className={styles.textSection}>
           <div className={styles.sticky}>Berliner Festspiele </div>
         </div>
@@ -241,7 +224,7 @@ const Work = () => {
           </div>
         </div>
       </div>
-      <div className={styles.projectNewSection}>
+      <div className={styles.projectSection}>
         <div className={styles.textSection}>
           <div className={styles.sticky}>Volksbühne</div>
         </div>
