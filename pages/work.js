@@ -190,7 +190,9 @@ const Work = () => {
           </div>
         </div>
       </div>
-      <div className={styles.projectSection}>
+      <div
+        className={`${styles.projectSection} ${showSection ? styles.show : ""}`}
+      >
         <div className={styles.textSection}>
           <div className={styles.sticky}>Berliner Festspiele </div>
         </div>
@@ -224,7 +226,9 @@ const Work = () => {
           </div>
         </div>
       </div>
-      <div className={styles.projectSection}>
+      <div
+        className={`${styles.projectSection} ${showSection ? styles.show : ""}`}
+      >
         <div className={styles.textSection}>
           <div className={styles.sticky}>Volksbühne</div>
         </div>
