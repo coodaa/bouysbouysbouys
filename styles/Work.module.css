@@ -87,10 +87,7 @@
   top: 0;
   font-size: 4rem;
   clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
-  opacity: 1; /* Machen Sie das Element ursprünglich unsichtbar */
-  transition: opacity 0.3s ease-in-out; /* Fügen Sie einen Übergang hinzu, um das Einblenden zu animieren */
 }
-
 
 .imageSection {
   /* flex: 1; */

@@ -70,21 +70,16 @@ const Work = () => {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-          } else {
-            entry.target.style.opacity = "0";
-          }
-        });
-      },
-      {
-        rootMargin: "0px 0px -200px 0px",
-        threshold: 0.1,
-      }
-    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          observer.unobserve(entry.target); // Stop observing the target after it has intersected once
+        } else {
+          entry.target.style.opacity = "0";
+        }
+      });
+    });
 
     const stickyElements = document.querySelectorAll(".sticky");
 
