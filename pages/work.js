@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "../styles/Work.module.css";
 import useAnimatedText from "../hooks/useAnimatedText";
@@ -109,6 +109,41 @@ const Work = () => {
     };
   }, []);
 
+  const [showDescription, setShowDescription] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowDescription(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    const projectSection = document.querySelector(".projectSection");
+
+    if (projectSection) {
+      observer.observe(projectSection);
+    }
+
+    return () => {
+      if (projectSection) {
+        observer.unobserve(projectSection);
+      }
+    };
+  }, []);
+
   return (
     <div className={styles.workPage}>
       <main className={styles.headingContainer}>
@@ -118,8 +153,25 @@ const Work = () => {
           </h1>
         </div>
       </main>
-      <div className={styles.arrow}>&#8595;</div>
-      <div className={styles.projectSection}>
+      <div className={styles.descriptionContainer}>
+        <div
+          className={`${styles.description} ${
+            showDescription ? styles.show : ""
+          }`}
+        >
+          <p>
+            A selected set of experiments I'm building as I navigate through
+            ideas and technologies. I learn by testing out and building based on
+            concepts and techniques.
+          </p>
+        </div>
+        <div className={styles.arrow}>&#8595;</div>
+      </div>
+      <div
+        className={`${styles.projectSection} ${
+          isVisible ? styles.visible : styles.hidden
+        }`}
+      >
         <div className={styles.textSection}>
           <div className={styles.sticky} ref={titleRef2}>
             Gropiusbau
