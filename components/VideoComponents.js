@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import styles from "../styles/VideoComponent.module.css";
@@ -10,7 +10,10 @@ const VideoComponents = () => {
 
   const textList = ["BOUYS", "BOUYS", "BOUYS"]; // Add "BLOOB4" and "BLOOB5"
 
-  useEffect(() => {
+  const useIsomorphicLayoutEffect =
+    typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+  useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     videoRef.current.currentTime = 0;

@@ -35,45 +35,48 @@
   max-width: 100%; /* Begrenzt die Breite auf die des Elternelements */
 }
 
+
 @keyframes arrowBounce {
   0% {
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
   }
-  10% {
-    visibility: visible;
+  20% {
+    opacity: 0.5;
   }
-  30% {
-    transform: translateY(5%);
-  }
-  50% {
-    transform: translateY(15%);
-  }
-  70% {
-    transform: translateY(5%);
-  }
-  90% {
-    transform: translateY(15%);
-  }
-  100% {
-    transform: translateY(0);
+  40% {
     opacity: 1;
     visibility: visible;
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5%);
+  }
+  60% {
+    transform: translateY(0%);
+  }
+  70% {
+    transform: translateY(-5%);
+  }
+  80%, 100% {
+    transform: translateY(0%);
+    visibility: visible;
+
   }
 }
+
 
 .arrow {
   font-size: 10rem;
   display: inline-block;
   text-align: right;
-  animation: arrowBounce 3s ease-in-out;
+  animation: arrowBounce 2s ease-in-out;
   animation-delay: 1s;
   visibility: hidden;
   animation-fill-mode: forwards;
   margin-bottom: 10vh;
 }
-
 
 .textSection {
   flex: 1;
@@ -84,7 +87,10 @@
   top: 0;
   font-size: 4rem;
   clip-path: polygon( 0 0, 100% 0, 100% 100%, 0% 100%);
+  opacity: 1; /* Machen Sie das Element ursprünglich unsichtbar */
+  transition: opacity 0.3s ease-in-out; /* Fügen Sie einen Übergang hinzu, um das Einblenden zu animieren */
 }
+
 
 .imageSection {
   /* flex: 1; */

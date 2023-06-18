@@ -14,7 +14,7 @@ const Work = () => {
   const settings1 = {
     duration: 0.8,
     delay: -1,
-    y: 200,
+    y: 240,
     stagger: 0.09,
   };
   const settings2 = {
@@ -67,6 +67,36 @@ const Work = () => {
       // Activate the parallax effect after a slight delay
       setTimeout(activateParallax, 200);
     }
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+          } else {
+            entry.target.style.opacity = "0";
+          }
+        });
+      },
+      {
+        rootMargin: "0px 0px -200px 0px",
+        threshold: 0.1,
+      }
+    );
+
+    const stickyElements = document.querySelectorAll(".sticky");
+
+    stickyElements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => {
+      stickyElements.forEach((element) => {
+        observer.unobserve(element);
+      });
+    };
   }, []);
 
   return (
