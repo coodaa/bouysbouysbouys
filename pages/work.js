@@ -10,6 +10,9 @@ const Work = () => {
   const imageRef4 = useRef();
   const imageRef5 = useRef();
   const imageRef6 = useRef();
+  const imageRef7 = useRef();
+  const imageRef8 = useRef();
+  const imageRef9 = useRef();
 
   const settings1 = {
     duration: 0.8,
@@ -59,6 +62,18 @@ const Work = () => {
           transition: "cubic-bezier(0,0,0,1)",
         });
         new SimpleParallax(imageRef6.current, {
+          delay: 0.6,
+          transition: "cubic-bezier(0,0,0,1)",
+        });
+        new SimpleParallax(imageRef7.current, {
+          delay: 0.6,
+          transition: "cubic-bezier(0,0,0,1)",
+        });
+        new SimpleParallax(imageRef8.current, {
+          delay: 0.6,
+          transition: "cubic-bezier(0,0,0,1)",
+        });
+        new SimpleParallax(imageRef9.current, {
           delay: 0.6,
           transition: "cubic-bezier(0,0,0,1)",
         });
@@ -173,13 +188,13 @@ const Work = () => {
             />
           </div>
         </div>
-      </div>{" "}
+      </div>
       <div className={styles.projectNewSection}>
         <div className={styles.textSection}>
           <div className={styles.sticky}>Volksbühne</div>
         </div>
         <div className={styles.imageSection}>
-          <div ref={imageRef4}>
+          <div ref={imageRef7}>
             <Image
               src="/img/gas.webp"
               alt="Beschreibung des Bildes"
@@ -188,7 +203,7 @@ const Work = () => {
               layout="responsive"
             />
           </div>
-          <div ref={imageRef5}>
+          <div ref={imageRef8}>
             <Image
               src="/img/gas2.webp"
               alt="Beschreibung des Bildes"
@@ -197,7 +212,7 @@ const Work = () => {
               layout="responsive"
             />
           </div>
-          <div ref={imageRef6}>
+          <div ref={imageRef9}>
             <Image
               src="/img/gas3.webp"
               alt="Beschreibung des Bildes"
