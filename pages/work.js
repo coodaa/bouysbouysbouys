@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "../styles/Work.module.css";
 import useAnimatedText from "../hooks/useAnimatedText";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import useWindowSize from "../hooks/useWindowSize";
 
 const Work = () => {
   const imageRef1 = useRef();
@@ -20,19 +23,6 @@ const Work = () => {
     y: 240,
     stagger: 0.09,
   };
-  const settings2 = {
-    duration: 0.8,
-    delay: -1.355,
-    y: +90,
-    stagger: 0.09,
-  };
-  //arrow animation
-  const settings3 = {
-    duration: 0.8,
-    delay: -1.355,
-    y: +90,
-    stagger: 0.09,
-  };
 
   const [titleRef1, titleRef2] = useAnimatedText(settings1, settings1);
 
@@ -41,72 +31,28 @@ const Work = () => {
       const SimpleParallax = require("simple-parallax-js");
 
       const activateParallax = () => {
-        new SimpleParallax(imageRef1.current, {
-          delay: 0.6,
-          transition: "cubic-bezier(0,0,0,1)",
-        });
-        new SimpleParallax(imageRef2.current, {
-          delay: 0.6,
-          transition: "cubic-bezier(0,0,0,1)",
-        });
-        new SimpleParallax(imageRef3.current, {
-          delay: 0.6,
-          transition: "cubic-bezier(0,0,0,1)",
-        });
-        new SimpleParallax(imageRef4.current, {
-          delay: 0.6,
-          transition: "cubic-bezier(0,0,0,1)",
-        });
-        new SimpleParallax(imageRef5.current, {
-          delay: 0.6,
-          transition: "cubic-bezier(0,0,0,1)",
-        });
-        new SimpleParallax(imageRef6.current, {
-          delay: 0.6,
-          transition: "cubic-bezier(0,0,0,1)",
-        });
-        new SimpleParallax(imageRef7.current, {
-          delay: 0.6,
-          transition: "cubic-bezier(0,0,0,1)",
-        });
-        new SimpleParallax(imageRef8.current, {
-          delay: 0.6,
-          transition: "cubic-bezier(0,0,0,1)",
-        });
-        new SimpleParallax(imageRef9.current, {
-          delay: 0.6,
-          transition: "cubic-bezier(0,0,0,1)",
+        const imageRefs = [
+          imageRef1,
+          imageRef2,
+          imageRef3,
+          imageRef4,
+          imageRef5,
+          imageRef6,
+          imageRef7,
+          imageRef8,
+          imageRef9,
+        ];
+
+        imageRefs.forEach((ref) => {
+          new SimpleParallax(ref.current, {
+            delay: 0.6,
+            transition: "cubic-bezier(0,0,0,1)",
+          });
         });
       };
 
-      // Activate the parallax effect after a slight delay
       setTimeout(activateParallax, 200);
     }
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          observer.unobserve(entry.target); // Stop observing the target after it has intersected once
-        } else {
-          entry.target.style.opacity = "0";
-        }
-      });
-    });
-
-    const stickyElements = document.querySelectorAll(".sticky");
-
-    stickyElements.forEach((element) => {
-      observer.observe(element);
-    });
-
-    return () => {
-      stickyElements.forEach((element) => {
-        observer.unobserve(element);
-      });
-    };
   }, []);
 
   const [showDescription, setShowDescription] = useState(false);
@@ -128,6 +74,26 @@ const Work = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  const projectSectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const [ref1, inView1] = useInView({
+    triggerOnce: true,
+    rootMargin: "0px 0px -100px 0px",
+  });
+
+  const [ref2, inView2] = useInView({
+    triggerOnce: true,
+    rootMargin: "0px 0px -100px 0px",
+  });
+
+  const [ref3, inView3] = useInView({
+    triggerOnce: true,
+    rootMargin: "0px 0px -100px 0px",
+  });
 
   return (
     <div className={styles.workPage}>
@@ -152,8 +118,14 @@ const Work = () => {
         </div>
         <div className={styles.arrow}>&#8595;</div>
       </div>
-      <div
+
+      <motion.div
+        ref={ref1}
         className={`${styles.projectSection} ${showSection ? styles.show : ""}`}
+        initial="hidden"
+        animate={inView1 ? "visible" : "hidden"}
+        variants={projectSectionVariants}
+        transition={{ duration: 0.5, delay: 0.5 }}
       >
         <div className={styles.textSection}>
           <div className={styles.sticky} ref={titleRef2}>
@@ -189,9 +161,14 @@ const Work = () => {
             />
           </div>
         </div>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        ref={ref2}
         className={`${styles.projectSection} ${showSection ? styles.show : ""}`}
+        initial="hidden"
+        animate={inView2 ? "visible" : "hidden"}
+        variants={projectSectionVariants}
+        transition={{ duration: 0.5, delay: 0.5 }}
       >
         <div className={styles.textSection}>
           <div className={styles.sticky}>Berliner Festspiele </div>
@@ -225,9 +202,15 @@ const Work = () => {
             />
           </div>
         </div>
-      </div>
-      <div
+      </motion.div>
+
+      <motion.div
+        ref={ref3}
         className={`${styles.projectSection} ${showSection ? styles.show : ""}`}
+        initial="hidden"
+        animate={inView3 ? "visible" : "hidden"}
+        variants={projectSectionVariants}
+        transition={{ duration: 0.5, delay: 0.5 }}
       >
         <div className={styles.textSection}>
           <div className={styles.sticky}>Volksbühne</div>
@@ -261,7 +244,7 @@ const Work = () => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
