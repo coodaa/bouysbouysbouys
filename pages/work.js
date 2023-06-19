@@ -16,7 +16,7 @@ const Work = () => {
 
   const settings1 = {
     duration: 0.8,
-    delay: -0.5,
+    delay: -0.3,
     y: 240,
     stagger: 0.09,
   };
