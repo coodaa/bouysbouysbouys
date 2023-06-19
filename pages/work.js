@@ -4,7 +4,6 @@ import styles from "../styles/Work.module.css";
 import useAnimatedText from "../hooks/useAnimatedText";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import useWindowSize from "../hooks/useWindowSize";
 
 const Work = () => {
   const imageRef1 = useRef();
