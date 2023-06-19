@@ -62,7 +62,7 @@ export default function Contact() {
       chars,
       {
         duration: 0.4,
-        delay: 0,
+        delay: 0.5,
         y: +80,
         stagger: 0.03,
       },
@@ -79,7 +79,7 @@ export default function Contact() {
       chars,
       {
         duration: 0.3,
-        delay: -1,
+        delay: -0.5,
         y: +80,
         stagger: 0.03,
       },
