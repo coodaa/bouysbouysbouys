@@ -94,6 +94,21 @@ const Work = () => {
     rootMargin: "0px 0px -100px 0px",
   });
 
+  const [titleRefGropiusbau, titleInViewGropiusbau] = useInView({
+    triggerOnce: true,
+    rootMargin: "0px 0px -100px 0px",
+  });
+
+  const [titleRefFestspiele, titleInViewFestspiele] = useInView({
+    triggerOnce: true,
+    rootMargin: "0px 0px -100px 0px",
+  });
+
+  const [titleRefVolksbuehne, titleInViewVolksbuehne] = useInView({
+    triggerOnce: true,
+    rootMargin: "0px 0px -100px 0px",
+  });
+
   return (
     <div className={styles.workPage}>
       <main className={styles.headingContainer}>
