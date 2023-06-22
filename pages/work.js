@@ -15,7 +15,7 @@ const Work = () => {
   const imageRef7 = useRef();
   const imageRef8 = useRef();
   const imageRef9 = useRef();
-
+  ////this is a commit
   const settings1 = {
     duration: 0.8,
     delay: -0.3,
