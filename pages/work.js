@@ -15,7 +15,6 @@ const Work = () => {
   const imageRef7 = useRef();
   const imageRef8 = useRef();
   const imageRef9 = useRef();
-  ////this is a commit
   const settings1 = {
     duration: 0.8,
     delay: -0.3,
@@ -109,6 +108,11 @@ const Work = () => {
     rootMargin: "0px 0px -100px 0px",
   });
 
+  const [textRef, textInView] = useInView({
+    triggerOnce: true,
+    rootMargin: "0px 0px -100px 0px",
+  });
+
   return (
     <div className={styles.workPage}>
       <main className={styles.headingContainer}>
@@ -142,10 +146,17 @@ const Work = () => {
         transition={{ duration: 0.5, delay: 0.5 }}
       >
         <div className={styles.textSection}>
-          <div className={styles.sticky} ref={titleRef2}>
-            Gropiusbau
-          </div>
+          <motion.div
+            ref={textRef}
+            initial="hidden"
+            animate={textInView ? "visible" : "hidden"}
+            variants={projectSectionVariants} // Variants for your text animation
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <div className={styles.sticky}>Gropiusbau</div>
+          </motion.div>
         </div>
+
         <div className={styles.imageSection}>
           <div ref={imageRef1}>
             <Image
