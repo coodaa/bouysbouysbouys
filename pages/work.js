@@ -21,7 +21,7 @@ const Work = () => {
     y: 240,
     stagger: 0.09,
   };
-
+  //test push
   const [titleRef1, titleRef2] = useAnimatedText(settings1, settings1);
 
   useEffect(() => {
